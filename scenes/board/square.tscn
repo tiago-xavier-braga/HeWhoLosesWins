@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://54ty87lt207c"]
+
+[ext_resource type="Script" uid="uid://n1t7qh6hqkup" path="res://scripts/board/square.gd" id="1_010gg"]
+[ext_resource type="Texture2D" uid="uid://2jyq27gfoa8i" path="res://assets/textures/txt_piece_selected.svg" id="1_yigd6"]
+[ext_resource type="Texture2D" uid="uid://c804a4625v2cv" path="res://assets/textures/txt_capture_hint.svg" id="3_010gg"]
+[ext_resource type="Texture2D" uid="uid://bvimuuc4kaba0" path="res://assets/textures/txt_square.svg" id="4_nyn02"]
+
+[node name="Square" type="Node2D" unique_id=334273058 node_paths=PackedStringArray("background", "effect_sprite")]
+script = ExtResource("1_010gg")
+background = NodePath("Background")
+effect_sprite = NodePath("EffectSprite")
+selected_square = ExtResource("1_yigd6")
+capture_hint = ExtResource("3_010gg")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=492129828]
+position = Vector2(64, 64)
+texture = ExtResource("4_nyn02")
+
+[node name="EffectSprite" type="Sprite2D" parent="." unique_id=1595450650]
+position = Vector2(64, 64)
+texture = ExtResource("1_yigd6")

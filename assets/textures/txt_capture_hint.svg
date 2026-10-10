@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="square">
+      <rect width="128" height="128"/>
+    </clipPath>
+  </defs>
+  <path clip-path="url(#square)" fill="#FFFFFF" fill-rule="evenodd"
+        d="M64 0a64 64 0 1 0 0 128a64 64 0 1 0 0-128zM64 12a52 52 0 1 1 0 104a52 52 0 1 1 0-104z"/>
+</svg>

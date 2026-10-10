@@ -1,3 +1,18 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Exports (web build, zips)
+/build/
+/export/
+*.zip
+
+# Export credentials (export_presets.cfg itself stays tracked)
+export_credentials.cfg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code local settings
+.claude/settings.local.json

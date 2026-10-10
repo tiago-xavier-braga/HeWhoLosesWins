@@ -4,7 +4,7 @@ This is a project to create a web game that will be published on third-party sit
 All the documentation for the project should be kept in the project's docs folder.
 
 ## Phase 1 
-- [ ] Create the project base and set up the default settings;
+- [x] Create the project base and set up the default settings;
 - [ ] Create mechanics to control the pieces using placeholder art
 - [ ] Create a rule for whose turn it is
 - [ ] Create a rule for when a player wins the match

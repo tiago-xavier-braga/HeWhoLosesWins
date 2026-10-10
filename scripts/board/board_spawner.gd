@@ -1,3 +1,4 @@
+class_name BoardSpawner
 extends Node
 
 @export var board_scene: PackedScene
@@ -14,7 +15,7 @@ var _board: Node2D
 var _square_size: Vector2 = Vector2.ZERO
 
 
-func _ready() -> void:
+func initialize() -> void:
 	_board = board_scene.instantiate()
 	add_child(_board)
 

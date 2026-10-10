@@ -4,6 +4,10 @@
 
 A checkers game where whoever loses wins. You have to lose your pieces.
 
+## Reference Image
+
+![Visual reference for the game](reference.png)
+
 ## Overview
 
 - **Genre:** Digital card/board game

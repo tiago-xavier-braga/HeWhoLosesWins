@@ -35,12 +35,12 @@ square_scene = ExtResource("3_y4oy0")
 light_color = Color(0.8627451, 0.9411765, 0.9098039, 1)
 dark_color = Color(0.5764706, 0.7294118, 0.6901961, 1)
 
-[node name="Node" type="Node" parent="." unique_id=861833667]
+[node name="PiecesSpawner" type="Node" parent="." unique_id=861833667]
 script = ExtResource("4_e7lak")
 piece_scene = ExtResource("5_q2u2d")
 
 [node name="MatchController" type="Node" parent="." unique_id=386835935 node_paths=PackedStringArray("board_spawner", "pieces_spawner")]
 script = ExtResource("6_dnqnc")
 board_spawner = NodePath("../BoardSpawner")
-pieces_spawner = NodePath("../Node")
+pieces_spawner = NodePath("../PiecesSpawner")
 metadata/_custom_type_script = "uid://bdbkg78usvfn3"

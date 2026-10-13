@@ -9,15 +9,16 @@ extends Node2D
 @export var white_crown: Color = Color("2b3f4d")
 @export var black_crown: Color = Color("f5f1e6")
 
-var _is_checker: bool = false
-var _is_white: bool = false
+var cell: Vector2i = Vector2i.ZERO
+var is_white: bool = false
+var is_checker: bool = false
 
-func initialize(is_white: bool) -> void:
-	_is_white = is_white
-	piece_sprite.texture = white_texture if _is_white else black_texture
+func initialize(white: bool) -> void:
+	is_white = white
+	piece_sprite.texture = white_texture if is_white else black_texture
 	crown_sprite.visible = false
-	crown_sprite.modulate = white_crown if _is_white else black_crown
+	crown_sprite.modulate = white_crown if is_white else black_crown
 
 func set_checker() -> void:
-	_is_checker = true
+	is_checker = true
 	crown_sprite.visible = true

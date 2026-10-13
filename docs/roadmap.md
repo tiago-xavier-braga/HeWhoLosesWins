@@ -7,8 +7,9 @@ All the documentation for the project should be kept in the project's docs folde
 - [x] Create the project base and set up the default settings;
 - [x] Create mechanics to control the pieces using placeholder art
 - [x] Create a rule for whose turn it is
-- [ ] Create a rule for when a player wins the match
+- [x] Create a rule for when a player wins the match
 
+- [ ] Export the project for a web build
 ## Phase 2
 
 - [ ] Create the CPU mechanics with 3 levels (easy, medium, hard)

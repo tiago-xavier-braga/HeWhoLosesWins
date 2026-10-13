@@ -49,16 +49,21 @@ func _set_turn(index: int) -> void:
 	_current_index = index
 	current_player = players[index]
 	pointer_input.player = current_player
+	piece_mover.current_player = current_player
 	turn_changed.emit(current_player)
 
 
-# Whoever loses all their pieces wins.
+# Whoever loses all their pieces wins, and so does whoever is left with no legal move.
 func _on_piece_moved(_piece: Piece) -> void:
 	for player: PlayerData in players:
 		if player.has_won():
 			_finish_match(player)
 			return
-	_set_turn((_current_index + 1) % players.size())
+	var next_index: int = (_current_index + 1) % players.size()
+	if not piece_mover.can_move(players[next_index]):
+		_finish_match(players[next_index])
+		return
+	_set_turn(next_index)
 
 
 func _finish_match(winner: PlayerData) -> void:

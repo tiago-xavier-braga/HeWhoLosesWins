@@ -11,37 +11,37 @@ extends Node
 
 @export var margin: float = 0.05
 
-var _board: Node2D
-var _square_size: Vector2 = Vector2.ZERO
+var board: Node2D
+var square_size: Vector2 = Vector2.ZERO
 
 
 func initialize() -> void:
-	_board = board_scene.instantiate()
-	add_child(_board)
+	board = board_scene.instantiate()
+	add_child(board)
 
 	var sample_square: Square = square_scene.instantiate()
-	_square_size = sample_square.background.texture.get_size()
+	square_size = sample_square.background.texture.get_size()
 	sample_square.free()
 
 	for y: int in board_size:
 		for x: int in board_size:
-			_board.add_child(_create_square(Vector2i(x, y)))
+			board.add_child(_create_square(Vector2i(x, y)))
 
 	_fit_board()
 
 
 func _create_square(cell: Vector2i) -> Square:
 	var square: Square = square_scene.instantiate()
-	square.position = Vector2(cell) * _square_size
+	square.position = Vector2(cell) * square_size
 	square.initialize(cell, light_color if (cell.x + cell.y) % 2 == 0 else dark_color)
 	return square
 
 
 func _fit_board() -> void:
 	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
-	var board_pixels: float = _square_size.x * board_size
+	var board_pixels: float = square_size.x * board_size
 	var fit_scale: float = minf(viewport_size.x, viewport_size.y) / board_pixels * (1.0 - margin)
 	var scaled_pixels: float = board_pixels * fit_scale
 
-	_board.scale = Vector2(fit_scale, fit_scale)
-	_board.position = (viewport_size - Vector2(scaled_pixels, scaled_pixels)) / 2.0
+	board.scale = Vector2(fit_scale, fit_scale)
+	board.position = (viewport_size - Vector2(scaled_pixels, scaled_pixels)) / 2.0

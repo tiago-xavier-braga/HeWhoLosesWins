@@ -1,0 +1,31 @@
+class_name MatchController
+extends Node
+
+const START_ROWS: int = 3
+
+@export var board_spawner: BoardSpawner
+@export var pieces_spawner: PiecesSpawner
+
+var players: Array[PlayerData] = []
+
+
+func _ready() -> void:
+	start_match()
+
+
+func start_match() -> void:
+	board_spawner.initialize()
+	players = [PlayerData.new(true), PlayerData.new(false)]
+	for player: PlayerData in players:
+		_spawn_player_pieces(player)
+
+
+func _spawn_player_pieces(player: PlayerData) -> void:
+	var size: int = board_spawner.board_size
+	var first_row: int = size - START_ROWS if player.is_white else 0
+	var cells: Array[Vector2i] = []
+	for y: int in range(first_row, first_row + START_ROWS):
+		for x: int in size:
+			if (x + y) % 2 != 0:
+				cells.append(Vector2i(x, y))
+	pieces_spawner.spawn_pieces(player, cells, board_spawner.square_size, board_spawner.board)

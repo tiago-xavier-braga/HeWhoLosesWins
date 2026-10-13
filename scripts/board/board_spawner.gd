@@ -12,6 +12,7 @@ extends Node
 @export var margin: float = 0.05
 
 var board: Node2D
+var squares: Dictionary[Vector2i, Square] = {}
 var square_size: Vector2 = Vector2.ZERO
 
 
@@ -33,6 +34,7 @@ func initialize() -> void:
 func _create_square(cell: Vector2i) -> Square:
 	var square: Square = square_scene.instantiate()
 	square.position = Vector2(cell) * square_size
+	squares[cell] = square
 	square.initialize(cell, light_color if (cell.x + cell.y) % 2 == 0 else dark_color)
 	return square
 

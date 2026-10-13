@@ -21,6 +21,14 @@ func initialize(players: Array[PlayerData], board_spawner: BoardSpawner) -> void
 		player.move_requested.connect(_on_move_requested)
 
 
+func get_moves(piece: Piece) -> Array[MoveRules.Move]:
+	var moves: Array[MoveRules.Move] = []
+	for move: MoveRules.Move in _rules.get_legal_moves(_owner_of(piece)):
+		if move.piece == piece:
+			moves.append(move)
+	return moves
+
+
 # The state changes at once, so the turn can pass; the animation only catches up.
 func _on_move_requested(piece: Piece, to_cell: Vector2i) -> void:
 	var move: MoveRules.Move = _rules.find_move(_owner_of(piece), piece, to_cell)

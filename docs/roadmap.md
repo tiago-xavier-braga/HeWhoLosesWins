@@ -5,8 +5,8 @@ All the documentation for the project should be kept in the project's docs folde
 
 ## Phase 1 
 - [x] Create the project base and set up the default settings;
-- [ ] Create mechanics to control the pieces using placeholder art
-- [ ] Create a rule for whose turn it is
+- [x] Create mechanics to control the pieces using placeholder art
+- [x] Create a rule for whose turn it is
 - [ ] Create a rule for when a player wins the match
 
 ## Phase 2

@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://d1765to1i12kb" path="res://scripts/input/pointer_input.gd" id="7_pointer"]
 [ext_resource type="Script" uid="uid://bp8ejgkhd6rls" path="res://scripts/piece/piece_mover.gd" id="8_mover"]
 
+[ext_resource type="Script" path="res://scripts/board/move_hints.gd" id="10_hints"]
+[ext_resource type="PackedScene" path="res://scenes/ui/win_panel.tscn" id="9_panel"]
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)
 
@@ -42,12 +44,14 @@ margin = 0.1
 script = ExtResource("4_e7lak")
 piece_scene = ExtResource("5_q2u2d")
 
-[node name="MatchController" type="Node" parent="." unique_id=386835935 node_paths=PackedStringArray("board_spawner", "pieces_spawner", "pointer_input", "piece_mover")]
+[node name="MatchController" type="Node" parent="." unique_id=386835935 node_paths=PackedStringArray("board_spawner", "pieces_spawner", "pointer_input", "piece_mover", "move_hints", "win_panel")]
 script = ExtResource("6_dnqnc")
 board_spawner = NodePath("../BoardSpawner")
 pieces_spawner = NodePath("../PiecesSpawner")
 pointer_input = NodePath("../PointerInput")
 piece_mover = NodePath("../PieceMover")
+move_hints = NodePath("../MoveHints")
+win_panel = NodePath("../WinPanel")
 metadata/_custom_type_script = "uid://bdbkg78usvfn3"
 
 [node name="PointerInput" type="Node" parent="." unique_id=1000000003]
@@ -55,3 +59,8 @@ script = ExtResource("7_pointer")
 
 [node name="PieceMover" type="Node" parent="." unique_id=1000000004]
 script = ExtResource("8_mover")
+
+[node name="WinPanel" parent="." instance=ExtResource("9_panel")]
+
+[node name="MoveHints" type="Node" parent="."]
+script = ExtResource("10_hints")

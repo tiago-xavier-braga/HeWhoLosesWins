@@ -9,6 +9,8 @@ const START_ROWS: int = 3
 @export var pieces_spawner: PiecesSpawner
 @export var pointer_input: PointerInput
 @export var piece_mover: PieceMover
+@export var move_hints: MoveHints
+@export var win_panel: WinPanel
 
 var players: Array[PlayerData] = []
 var current_player: PlayerData
@@ -27,6 +29,7 @@ func start_match() -> void:
 		_spawn_player_pieces(player)
 	pointer_input.initialize(players[0], board_spawner)
 	piece_mover.initialize(players, board_spawner)
+	move_hints.initialize(pointer_input, piece_mover, board_spawner)
 	piece_mover.piece_moved.connect(_on_piece_moved)
 	_set_turn(0)
 
@@ -49,5 +52,15 @@ func _set_turn(index: int) -> void:
 	turn_changed.emit(current_player)
 
 
+# Whoever loses all their pieces wins.
 func _on_piece_moved(_piece: Piece) -> void:
+	for player: PlayerData in players:
+		if player.has_won():
+			_finish_match(player)
+			return
 	_set_turn((_current_index + 1) % players.size())
+
+
+func _finish_match(winner: PlayerData) -> void:
+	pointer_input.set_process_unhandled_input(false)
+	win_panel.show_winner("Player %d" % (players.find(winner) + 1))

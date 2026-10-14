@@ -11,6 +11,7 @@ const START_ROWS: int = 3
 @export var piece_mover: PieceMover
 @export var move_hints: MoveHints
 @export var win_panel: WinPanel
+@export var cpu_player: CpuPlayer
 
 var players: Array[PlayerData] = []
 var current_player: PlayerData
@@ -30,6 +31,8 @@ func start_match() -> void:
 	pointer_input.initialize(players[0], board_spawner)
 	piece_mover.initialize(players, board_spawner)
 	move_hints.initialize(pointer_input, piece_mover, board_spawner)
+	cpu_player.initialize(players[1], players, board_spawner.board_size)
+	turn_changed.connect(cpu_player.on_turn_changed)
 	piece_mover.piece_moved.connect(_on_piece_moved)
 	_set_turn(0)
 
@@ -49,11 +52,11 @@ func _set_turn(index: int) -> void:
 	_current_index = index
 	current_player = players[index]
 	pointer_input.player = current_player
+	pointer_input.set_process_unhandled_input(current_player != cpu_player.player)
 	piece_mover.current_player = current_player
 	turn_changed.emit(current_player)
 
 
-# Whoever loses all their pieces wins, and so does whoever is left with no legal move.
 func _on_piece_moved(_piece: Piece) -> void:
 	for player: PlayerData in players:
 		if player.has_won():

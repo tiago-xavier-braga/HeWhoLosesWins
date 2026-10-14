@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CpuDifficulty" format=3]
+
+[ext_resource type="Script" path="res://scripts/cpu/cpu_difficulty.gd" id="1_difficulty"]
+
+[resource]
+script = ExtResource("1_difficulty")
+search_depth = 2

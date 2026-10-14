@@ -9,10 +9,10 @@ All the documentation for the project should be kept in the project's docs folde
 - [x] Create a rule for whose turn it is
 - [x] Create a rule for when a player wins the match
 
-- [ ] Export the project for a web build
+- [x] Export the project for a web build
 ## Phase 2
 
-- [ ] Create the CPU mechanics with 3 levels (easy, medium, hard)
+- [x] Create the CPU mechanics with 3 levels (easy, medium, hard)
 - [ ] Create the puzzle mechanics
 - [ ] Create a web build
 

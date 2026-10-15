@@ -31,8 +31,11 @@ It plays like checkers on an 8x8 board, but the goal is reversed:
 Click or tap one of your pieces to see where it can go: a dot for a move, a
 ring for a capture.
 
-See the [game design document](docs/gdd.md) for the full rules and the
-[roadmap](docs/roadmap.md) for the plan, phase by phase.
+## Documentation
+
+- [Game design document](docs/gdd.md): the full rules and design.
+- [Roadmap](docs/roadmap.md): the plan, phase by phase.
+- [Playtest feedback](docs/feedback.md): player suggestions and bug reports.
 
 ## Requirements
 

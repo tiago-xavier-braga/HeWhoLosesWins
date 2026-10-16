@@ -2,6 +2,27 @@
 
 [ext_resource type="Script" path="res://scripts/ui/win_panel.gd" id="1_panel"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0.5764706, 0.7294118, 0.6901961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.6764706, 0.8094118, 0.7701961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.4764706, 0.6294118, 0.5901961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="WinPanel" type="CanvasLayer" node_paths=PackedStringArray("message_label")]
 visible = false
 script = ExtResource("1_panel")
@@ -25,3 +46,54 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="Dim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_pressed_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_focus_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hover")
+text = "Restart"
+
+[node name="Menu" type="Button" parent="Dim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 170.0
+offset_right = 120.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_pressed_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_focus_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hover")
+text = "Menu"
+
+[connection signal="pressed" from="Dim/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Dim/Menu" to="." method="_on_menu_pressed"]

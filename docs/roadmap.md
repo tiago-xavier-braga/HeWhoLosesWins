@@ -13,7 +13,7 @@ All project documentation must be kept in the `docs/` folder.
 
 ## Phase 2: CPU and puzzles
 
-- [ ] Create the CPU mechanics:
+- [x] Create the CPU mechanics:
     - Decide between difficulty modes or a chess-like rating
     - Implement 3 modes (easy, medium, hard)
 - [ ] Create the puzzle mechanics:

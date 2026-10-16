@@ -1,0 +1,137 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="PackedScene" path="res://scenes/levels/lvl_game.tscn" id="2_game"]
+[ext_resource type="Resource" path="res://resources/cpu_easy.tres" id="3_easy"]
+[ext_resource type="Resource" path="res://resources/cpu_medium.tres" id="4_medium"]
+[ext_resource type="Resource" path="res://resources/cpu_hard.tres" id="5_hard"]
+[ext_resource type="Resource" path="res://resources/cpu_extreme.tres" id="6_extreme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0.5764706, 0.7294118, 0.6901961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.6764706, 0.8094118, 0.7701961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.4764706, 0.6294118, 0.5901961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Gradient" id="Gradient_bg"]
+colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bg"]
+gradient = SubResource("Gradient_bg")
+fill_to = Vector2(0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+game_scene = ExtResource("2_game")
+
+[node name="Gradient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_bg")
+expand_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Options" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Center/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+text = "Select difficulty"
+horizontal_alignment = 1
+
+[node name="Easy" type="Button" parent="Center/Options"]
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_pressed_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_focus_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hover")
+text = "Easy"
+
+[node name="Medium" type="Button" parent="Center/Options"]
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_pressed_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_focus_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hover")
+text = "Medium"
+
+[node name="Hard" type="Button" parent="Center/Options"]
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_pressed_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_focus_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hover")
+text = "Hard"
+
+[node name="Extreme" type="Button" parent="Center/Options"]
+custom_minimum_size = Vector2(320, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_pressed_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_hover_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_colors/font_focus_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hover")
+text = "Extreme"
+
+[connection signal="pressed" from="Center/Options/Easy" to="." method="_on_difficulty_pressed" binds= [ExtResource("3_easy")]]
+[connection signal="pressed" from="Center/Options/Medium" to="." method="_on_difficulty_pressed" binds= [ExtResource("4_medium")]]
+[connection signal="pressed" from="Center/Options/Hard" to="." method="_on_difficulty_pressed" binds= [ExtResource("5_hard")]]
+[connection signal="pressed" from="Center/Options/Extreme" to="." method="_on_difficulty_pressed" binds= [ExtResource("6_extreme")]]

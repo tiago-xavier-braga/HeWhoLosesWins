@@ -31,6 +31,7 @@ func start_match() -> void:
 	pointer_input.initialize(players[0], board_spawner)
 	piece_mover.initialize(players, board_spawner)
 	move_hints.initialize(pointer_input, piece_mover, board_spawner)
+	cpu_player.difficulty = GameSettings.difficulty
 	cpu_player.initialize(players[1], players, board_spawner.board_size)
 	turn_changed.connect(cpu_player.on_turn_changed)
 	piece_mover.piece_moved.connect(_on_piece_moved)

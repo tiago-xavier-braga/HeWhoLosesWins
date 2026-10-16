@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/win_panel.tscn" id="9_panel"]
 [ext_resource type="Script" uid="uid://dms3litywx6yc" path="res://scripts/board/move_hints.gd" id="10_hints"]
 [ext_resource type="Script" uid="uid://b8wqcqmq3hism" path="res://scripts/cpu/cpu_player.gd" id="11_cpu"]
-[ext_resource type="Resource" path="res://resources/cpu_hard.tres" id="12_wh5g0"]
+[ext_resource type="Resource" path="res://resources/cpu_extreme.tres" id="12_wh5g0"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)

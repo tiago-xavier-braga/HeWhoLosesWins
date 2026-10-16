@@ -3,11 +3,11 @@ extends CanvasLayer
 
 const MENU_SCENE_PATH: String = "res://scenes/ui/main_menu.tscn"
 
-@export var message_label: Label
+@export var winner_label: Label
 
 
 func show_winner(player_name: String) -> void:
-	message_label.text = "%s wins" % player_name
+	winner_label.text = player_name
 	show()
 
 

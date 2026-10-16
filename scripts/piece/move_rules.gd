@@ -7,6 +7,7 @@ const DIRECTIONS: Array[Vector2i] = [
 
 var _players: Array[PlayerData]
 var _board_size: int
+var _occupied: Dictionary[Vector2i, Piece] = {}
 
 
 class Move:
@@ -40,6 +41,7 @@ func find_move(player: PlayerData, piece: Piece, to_cell: Vector2i) -> Move:
 
 
 func get_legal_moves(player: PlayerData) -> Array[Move]:
+	_rebuild_occupancy()
 	var captures: Array[Move] = []
 	for piece: Piece in player.pieces:
 		var path: Array[Vector2i] = []
@@ -109,9 +111,14 @@ func _in_bounds(cell: Vector2i) -> bool:
 	return cell.x >= 0 and cell.y >= 0 and cell.x < _board_size and cell.y < _board_size
 
 
-func _piece_at(cell: Vector2i, ignore: Piece) -> Piece:
+# Rebuilt on every call instead of kept in sync, so it can never go stale between moves.
+func _rebuild_occupancy() -> void:
+	_occupied.clear()
 	for player: PlayerData in _players:
 		for piece: Piece in player.pieces:
-			if piece != ignore and piece.cell == cell:
-				return piece
-	return null
+			_occupied[piece.cell] = piece
+
+
+func _piece_at(cell: Vector2i, ignore: Piece) -> Piece:
+	var piece: Piece = _occupied.get(cell)
+	return null if piece == ignore else piece

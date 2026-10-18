@@ -18,7 +18,7 @@ All project documentation must be kept in the `docs/` folder.
     - Implement 3 modes (easy, medium, hard)
 - [x] Create the puzzle mechanics:
     - Create a system to control the puzzles
-    - [ ] Create as many levels as possible (minimum 15)
+    - [x] Create as many levels as possible (minimum 15)
 - [ ] Publish a web build with the CPU and puzzles
 
 ## Phase 3: Multiplayer and rewards

@@ -1,6 +1,8 @@
 # Puzzles
 
-Levels live in `resources/puzzles/` and are listed in order in `scenes/ui/puzzle_menu.tscn`.
+Levels live in `resources/puzzles/`. They are grouped into the menu's sections in
+`resources/puzzle_sections/` (one `.tres` per section below), and the sections are listed in
+order in `scenes/ui/puzzle_menu.tscn`.
 Squares are `(column, row)`, with row 0 at the top (the CPU's side). The player is always
 white and moves up.
 

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_01.tres" id="3_puzzle_01"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_02.tres" id="3_puzzle_02"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_03.tres" id="3_puzzle_03"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_04.tres" id="3_puzzle_04"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_05.tres" id="3_puzzle_05"]
+
+[resource]
+script = ExtResource("1_section")
+title = "TUTORIAL"
+idea = "One idea per puzzle"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_01"), ExtResource("3_puzzle_02"), ExtResource("3_puzzle_03"), ExtResource("3_puzzle_04"), ExtResource("3_puzzle_05")])

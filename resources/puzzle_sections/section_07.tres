@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_31.tres" id="3_puzzle_31"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_32.tres" id="3_puzzle_32"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_33.tres" id="3_puzzle_33"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_34.tres" id="3_puzzle_34"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_35.tres" id="3_puzzle_35"]
+
+[resource]
+script = ExtResource("1_section")
+title = "BLOCKED"
+idea = "No moves left is a win"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_31"), ExtResource("3_puzzle_32"), ExtResource("3_puzzle_33"), ExtResource("3_puzzle_34"), ExtResource("3_puzzle_35")])

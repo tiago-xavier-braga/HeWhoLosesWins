@@ -40,5 +40,5 @@ All project documentation must be kept in the `docs/` folder.
 
 - [x] Create more puzzle levels, beyond the minimum of 15 from Phase 2 (50 in total; see
   `puzzles.md`)
-- [ ] Make the puzzle menu fit more than 16 levels (scroll or pages); the 4-column grid
-  overflows the screen with 50
+- [x] Make the puzzle menu fit more than 16 levels: a scrolling list of sections, one theme
+  each (prototype in Penpot, "Puzzle Menu / Sections")

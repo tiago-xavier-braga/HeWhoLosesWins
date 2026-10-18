@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_06.tres" id="3_puzzle_06"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_07.tres" id="3_puzzle_07"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_08.tres" id="3_puzzle_08"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_09.tres" id="3_puzzle_09"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_10.tres" id="3_puzzle_10"]
+
+[resource]
+script = ExtResource("1_section")
+title = "CHALLENGES"
+idea = "Blocked, kings and 1 vs All"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_06"), ExtResource("3_puzzle_07"), ExtResource("3_puzzle_08"), ExtResource("3_puzzle_09"), ExtResource("3_puzzle_10")])

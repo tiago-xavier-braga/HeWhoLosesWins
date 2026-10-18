@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_11.tres" id="3_puzzle_11"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_12.tres" id="3_puzzle_12"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_13.tres" id="3_puzzle_13"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_14.tres" id="3_puzzle_14"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_15.tres" id="3_puzzle_15"]
+
+[resource]
+script = ExtResource("1_section")
+title = "FORCING"
+idea = "Give a piece away"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_11"), ExtResource("3_puzzle_12"), ExtResource("3_puzzle_13"), ExtResource("3_puzzle_14"), ExtResource("3_puzzle_15")])

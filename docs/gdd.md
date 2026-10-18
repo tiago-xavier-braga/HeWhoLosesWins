@@ -105,7 +105,9 @@ Each puzzle has one goal:
 
 ### Progression
 
-- The player can open the list of all puzzles.
+- The player can open the list of all puzzles. It scrolls, and groups the puzzles into
+  sections that each teach one idea. The next puzzle to play is highlighted, and the list
+  opens scrolled to its section.
 - Puzzles must be solved in order: a puzzle can't be played until the previous
   one is solved, so none can be skipped.
 - Progress is saved, on web and Android. How it's saved is decided later.

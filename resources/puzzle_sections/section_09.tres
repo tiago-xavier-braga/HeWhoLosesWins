@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_41.tres" id="3_puzzle_41"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_42.tres" id="3_puzzle_42"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_43.tres" id="3_puzzle_43"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_44.tres" id="3_puzzle_44"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_45.tres" id="3_puzzle_45"]
+
+[resource]
+script = ExtResource("1_section")
+title = "RULE TRICKS"
+idea = "Rules that change the result"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_41"), ExtResource("3_puzzle_42"), ExtResource("3_puzzle_43"), ExtResource("3_puzzle_44"), ExtResource("3_puzzle_45")])

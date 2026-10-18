@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_21.tres" id="3_puzzle_21"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_22.tres" id="3_puzzle_22"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_23.tres" id="3_puzzle_23"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_24.tres" id="3_puzzle_24"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_25.tres" id="3_puzzle_25"]
+
+[resource]
+script = ExtResource("1_section")
+title = "FEED THE KING"
+idea = "Crown the CPU"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_21"), ExtResource("3_puzzle_22"), ExtResource("3_puzzle_23"), ExtResource("3_puzzle_24"), ExtResource("3_puzzle_25")])

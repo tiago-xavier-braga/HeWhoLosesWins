@@ -2,57 +2,17 @@
 
 [ext_resource type="Script" path="res://scripts/ui/puzzle_menu.gd" id="1_menu"]
 [ext_resource type="PackedScene" path="res://scenes/levels/lvl_puzzle.tscn" id="2_puzzle"]
-[ext_resource type="Script" path="res://scripts/puzzle/puzzle_level.gd" id="3_level_script"]
-[ext_resource type="Resource" uid="uid://0wn40lde1q5v" path="res://resources/puzzles/puzzle_01.tres" id="4_puzzle_01"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_02.tres" id="4_puzzle_02"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_03.tres" id="4_puzzle_03"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_04.tres" id="4_puzzle_04"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_05.tres" id="4_puzzle_05"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_06.tres" id="4_puzzle_06"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_07.tres" id="4_puzzle_07"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_08.tres" id="4_puzzle_08"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_09.tres" id="4_puzzle_09"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_10.tres" id="4_puzzle_10"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_11.tres" id="4_puzzle_11"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_12.tres" id="4_puzzle_12"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_13.tres" id="4_puzzle_13"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_14.tres" id="4_puzzle_14"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_15.tres" id="4_puzzle_15"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_16.tres" id="4_puzzle_16"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_17.tres" id="4_puzzle_17"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_18.tres" id="4_puzzle_18"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_19.tres" id="4_puzzle_19"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_20.tres" id="4_puzzle_20"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_21.tres" id="4_puzzle_21"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_22.tres" id="4_puzzle_22"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_23.tres" id="4_puzzle_23"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_24.tres" id="4_puzzle_24"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_25.tres" id="4_puzzle_25"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_26.tres" id="4_puzzle_26"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_27.tres" id="4_puzzle_27"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_28.tres" id="4_puzzle_28"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_29.tres" id="4_puzzle_29"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_30.tres" id="4_puzzle_30"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_31.tres" id="4_puzzle_31"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_32.tres" id="4_puzzle_32"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_33.tres" id="4_puzzle_33"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_34.tres" id="4_puzzle_34"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_35.tres" id="4_puzzle_35"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_36.tres" id="4_puzzle_36"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_37.tres" id="4_puzzle_37"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_38.tres" id="4_puzzle_38"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_39.tres" id="4_puzzle_39"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_40.tres" id="4_puzzle_40"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_41.tres" id="4_puzzle_41"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_42.tres" id="4_puzzle_42"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_43.tres" id="4_puzzle_43"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_44.tres" id="4_puzzle_44"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_45.tres" id="4_puzzle_45"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_46.tres" id="4_puzzle_46"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_47.tres" id="4_puzzle_47"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_48.tres" id="4_puzzle_48"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_49.tres" id="4_puzzle_49"]
-[ext_resource type="Resource" path="res://resources/puzzles/puzzle_50.tres" id="4_puzzle_50"]
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="3_section_script"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_01.tres" id="4_section_01"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_02.tres" id="4_section_02"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_03.tres" id="4_section_03"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_04.tres" id="4_section_04"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_05.tres" id="4_section_05"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_06.tres" id="4_section_06"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_07.tres" id="4_section_07"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_08.tres" id="4_section_08"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_09.tres" id="4_section_09"]
+[ext_resource type="Resource" path="res://resources/puzzle_sections/section_10.tres" id="4_section_10"]
 [ext_resource type="Texture2D" path="res://assets/textures/ui/txt_bg_pattern.svg" id="5_pattern"]
 [ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_lock.svg" id="6_lock"]
 [ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_back.svg" id="7_back"]
@@ -64,7 +24,7 @@ colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.9725
 gradient = SubResource("Gradient_bg")
 fill_to = Vector2(0, 1)
 
-[node name="PuzzleMenu" type="Control" node_paths=PackedStringArray("grid", "open_template", "locked_template")]
+[node name="PuzzleMenu" type="Control" node_paths=PackedStringArray("scroll", "section_list", "section_template", "open_template", "next_template", "locked_template")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,10 +33,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 puzzle_scene = ExtResource("2_puzzle")
-grid = NodePath("Center/Layout/Grid")
+scroll = NodePath("Center/Layout/Scroll")
+section_list = NodePath("Center/Layout/Scroll/Margin/SectionList")
+section_template = NodePath("Center/Layout/SectionTemplate")
 open_template = NodePath("Center/Layout/OpenTemplate")
+next_template = NodePath("Center/Layout/NextTemplate")
 locked_template = NodePath("Center/Layout/LockedTemplate")
-puzzles = Array[ExtResource("3_level_script")]([ExtResource("4_puzzle_01"), ExtResource("4_puzzle_02"), ExtResource("4_puzzle_03"), ExtResource("4_puzzle_04"), ExtResource("4_puzzle_05"), ExtResource("4_puzzle_06"), ExtResource("4_puzzle_07"), ExtResource("4_puzzle_08"), ExtResource("4_puzzle_09"), ExtResource("4_puzzle_10"), ExtResource("4_puzzle_11"), ExtResource("4_puzzle_12"), ExtResource("4_puzzle_13"), ExtResource("4_puzzle_14"), ExtResource("4_puzzle_15"), ExtResource("4_puzzle_16"), ExtResource("4_puzzle_17"), ExtResource("4_puzzle_18"), ExtResource("4_puzzle_19"), ExtResource("4_puzzle_20"), ExtResource("4_puzzle_21"), ExtResource("4_puzzle_22"), ExtResource("4_puzzle_23"), ExtResource("4_puzzle_24"), ExtResource("4_puzzle_25"), ExtResource("4_puzzle_26"), ExtResource("4_puzzle_27"), ExtResource("4_puzzle_28"), ExtResource("4_puzzle_29"), ExtResource("4_puzzle_30"), ExtResource("4_puzzle_31"), ExtResource("4_puzzle_32"), ExtResource("4_puzzle_33"), ExtResource("4_puzzle_34"), ExtResource("4_puzzle_35"), ExtResource("4_puzzle_36"), ExtResource("4_puzzle_37"), ExtResource("4_puzzle_38"), ExtResource("4_puzzle_39"), ExtResource("4_puzzle_40"), ExtResource("4_puzzle_41"), ExtResource("4_puzzle_42"), ExtResource("4_puzzle_43"), ExtResource("4_puzzle_44"), ExtResource("4_puzzle_45"), ExtResource("4_puzzle_46"), ExtResource("4_puzzle_47"), ExtResource("4_puzzle_48"), ExtResource("4_puzzle_49"), ExtResource("4_puzzle_50")])
+sections = Array[ExtResource("3_section_script")]([ExtResource("4_section_01"), ExtResource("4_section_02"), ExtResource("4_section_03"), ExtResource("4_section_04"), ExtResource("4_section_05"), ExtResource("4_section_06"), ExtResource("4_section_07"), ExtResource("4_section_08"), ExtResource("4_section_09"), ExtResource("4_section_10")])
 
 [node name="Gradient" type="TextureRect" parent="."]
 layout_mode = 1
@@ -148,24 +111,51 @@ theme_override_font_sizes/font_size = 98
 text = "WINS!"
 horizontal_alignment = 1
 
-[node name="Title" type="Label" parent="Center/Layout"]
+[node name="Scroll" type="ScrollContainer" parent="Center/Layout"]
 layout_mode = 0
 offset_top = 418.0
 offset_right = 720.0
-offset_bottom = 460.0
-theme_override_font_sizes/font_size = 36
-text = "SELECT PUZZLE"
-horizontal_alignment = 1
+offset_bottom = 1116.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="Grid" type="GridContainer" parent="Center/Layout"]
+[node name="Margin" type="MarginContainer" parent="Center/Layout/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 83
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 83
+theme_override_constants/margin_bottom = 24
+
+[node name="SectionList" type="VBoxContainer" parent="Center/Layout/Scroll/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="SectionTemplate" type="VBoxContainer" parent="Center/Layout"]
+visible = false
 layout_mode = 0
-offset_left = 140.0
-offset_top = 484.0
-offset_right = 580.0
-offset_bottom = 980.0
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 16
-columns = 4
+offset_right = 554.0
+offset_bottom = 184.0
+theme_override_constants/separation = 12
+
+[node name="Header" type="VBoxContainer" parent="Center/Layout/SectionTemplate"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Center/Layout/SectionTemplate/Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "SECTION"
+
+[node name="Idea" type="Label" parent="Center/Layout/SectionTemplate/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.24705882, 0.3019608, 0.6)
+theme_override_font_sizes/font_size = 22
+text = "Idea"
+
+[node name="Levels" type="HBoxContainer" parent="Center/Layout/SectionTemplate"]
+layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="OpenTemplate" type="Button" parent="Center/Layout"]
 visible = false
@@ -173,6 +163,19 @@ custom_minimum_size = Vector2(98, 112)
 layout_mode = 0
 offset_right = 98.0
 offset_bottom = 112.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="NextTemplate" type="Button" parent="Center/Layout"]
+visible = false
+custom_minimum_size = Vector2(98, 112)
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 112.0
+mouse_filter = 1
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 40
 text = "1"
 
 [node name="LockedTemplate" type="Button" parent="Center/Layout"]
@@ -181,6 +184,7 @@ custom_minimum_size = Vector2(98, 112)
 layout_mode = 0
 offset_right = 98.0
 offset_bottom = 112.0
+mouse_filter = 1
 theme_type_variation = &"LockedButton"
 disabled = true
 icon = ExtResource("6_lock")

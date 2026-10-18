@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PuzzleSection" format=3]
+
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_section.gd" id="1_section"]
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="2_level"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_46.tres" id="3_puzzle_46"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_47.tres" id="3_puzzle_47"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_48.tres" id="3_puzzle_48"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_49.tres" id="3_puzzle_49"]
+[ext_resource type="Resource" path="res://resources/puzzles/puzzle_50.tres" id="3_puzzle_50"]
+
+[resource]
+script = ExtResource("1_section")
+title = "MASTERS"
+idea = "Everything at once"
+levels = Array[ExtResource("2_level")]([ExtResource("3_puzzle_46"), ExtResource("3_puzzle_47"), ExtResource("3_puzzle_48"), ExtResource("3_puzzle_49"), ExtResource("3_puzzle_50")])

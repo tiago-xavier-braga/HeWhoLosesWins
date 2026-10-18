@@ -6,7 +6,7 @@ A checkers game where whoever loses wins. You have to lose your pieces.
 
 ## Reference Image
 
-![Visual reference for the game](reference.png)
+![Visual reference for the game](images/reference.png)
 
 ## Overview
 

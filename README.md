@@ -1,10 +1,10 @@
 # He Who Loses Wins
 
 <p align="center">
-  <img src="docs/screenshot_start_menu.png" alt="Start screen with the He Who Loses Wins title and a Play button" width="180">
-  <img src="docs/screenshot_main_menu.png" alt="Main menu with the four CPU difficulties, Puzzles and a locked 2 Players button" width="180">
-  <img src="docs/screenshot_match.png" alt="A match against the CPU at the start, with the player bars above and below the board" width="180">
-  <img src="docs/screenshot_puzzle_menu.png" alt="Puzzle menu with the first sections; only puzzle 1 is unlocked" width="180">
+  <img src="docs/images/screenshot_start_menu.png" alt="Start screen with the He Who Loses Wins title and a Play button" width="180">
+  <img src="docs/images/screenshot_main_menu.png" alt="Main menu with the four CPU difficulties, Puzzles and a locked 2 Players button" width="180">
+  <img src="docs/images/screenshot_match.png" alt="A match against the CPU at the start, with the player bars above and below the board" width="180">
+  <img src="docs/images/screenshot_puzzle_menu.png" alt="Puzzle menu with the first sections; only puzzle 1 is unlocked" width="180">
 </p>
 
 A checkers game where whoever loses wins: the first player to lose all their

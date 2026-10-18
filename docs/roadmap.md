@@ -32,9 +32,11 @@ All project documentation must be kept in the `docs/` folder.
 
 ## Phase 4: Final art, UI and audio
 
-- [ ] Create the final art and import it into the project
-- [ ] Create the UIs
-- [ ] Import the sound files and add them to the project
+- [x] Create the final art and import it into the project
+- [x] Create the UIs
+- [x] Import the sound files and add them to the project
+- [x] Sign the game with the Xavi Games brand: boot splash and the studio lockup in the start
+  menu footer (prototype in Penpot, "Boot Splash" and "Start Menu / Studio Credit")
 
 ## Phase 5: Content
 

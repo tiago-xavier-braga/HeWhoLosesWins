@@ -13,6 +13,8 @@ const WINS_TEXT: String = "WINS!"
 @export var move_hints: MoveHints
 @export var win_panel: WinPanel
 @export var cpu_player: CpuPlayer
+## Seconds the board stays visible after the last move, before the result panel.
+@export var result_delay: float = 0.5
 
 var players: Array[PlayerData] = []
 var current_player: PlayerData
@@ -76,11 +78,16 @@ func _on_piece_moved(_piece: Piece) -> void:
 	_set_turn(next_index)
 
 
+# The match ends as soon as the last move changes the state, so the panel waits for its
+# animation; otherwise the player never sees the move that decided the game.
 func _finish_match(winner: PlayerData) -> void:
 	pointer_input.set_process_unhandled_input(false)
+	await piece_mover.move_animated
+	await get_tree().create_timer(result_delay).timeout
 	_show_result(winner)
 
 
 # PuzzleController overrides this to show solved or failed instead of the winner.
 func _show_result(winner: PlayerData) -> void:
-	win_panel.show_result("Player %d" % (players.find(winner) + 1), WINS_TEXT)
+	var title: String = "Player %d" % (players.find(winner) + 1)
+	win_panel.show_result(title, WINS_TEXT, winner != cpu_player.player)

@@ -2,6 +2,7 @@ class_name PieceMover
 extends Node
 
 signal piece_moved(piece: Piece)
+signal move_animated
 
 const MOVE_DURATION: float = 0.2
 const CAPTURE_FADE_DURATION: float = 0.15
@@ -57,6 +58,7 @@ func _on_move_requested(piece: Piece, to_cell: Vector2i) -> void:
 
 func _animate_step(move: MoveRules.Move, index: int) -> void:
 	if index >= move.path.size():
+		move_animated.emit()
 		return
 	if index < move.captured.size():
 		var taken: Piece = move.captured[index]

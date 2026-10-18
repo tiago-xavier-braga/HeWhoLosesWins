@@ -41,7 +41,8 @@ func _finish_match(winner: PlayerData) -> void:
 
 
 func _show_result(winner: PlayerData) -> void:
-	win_panel.show_result(TITLE_TEXT, FAILED_TEXT if winner == cpu_player.player else SOLVED_TEXT)
+	var solved: bool = winner != cpu_player.player
+	win_panel.show_result(TITLE_TEXT, SOLVED_TEXT if solved else FAILED_TEXT, solved)
 
 
 func _is_out_of_moves() -> bool:

@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://c8dcwywc2s1bx" path="res://scenes/levels/lvl_game.tscn" id="1_game"]
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_controller.gd" id="2_puzzle"]
+
+[node name="LvlPuzzle" instance=ExtResource("1_game")]
+
+[node name="MatchController" parent="." index="3" node_paths=PackedStringArray("board_spawner", "pieces_spawner", "pointer_input", "piece_mover", "move_hints", "win_panel", "cpu_player")]
+script = ExtResource("2_puzzle")
+board_spawner = NodePath("../BoardSpawner")
+pieces_spawner = NodePath("../PiecesSpawner")
+pointer_input = NodePath("../PointerInput")
+piece_mover = NodePath("../PieceMover")
+move_hints = NodePath("../MoveHints")
+win_panel = NodePath("../WinPanel")
+cpu_player = NodePath("../CpuPlayer")
+
+[node name="WinPanel" parent="." index="6"]
+menu_scene_path = "res://scenes/ui/puzzle_menu.tscn"

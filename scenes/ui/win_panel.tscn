@@ -1,9 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://ctj4riyy6wy2u"]
 
-[ext_resource type="Script" path="res://scripts/ui/win_panel.gd" id="1_panel"]
-[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_halftone.svg" id="2_halftone"]
+[ext_resource type="Script" uid="uid://dpmnesso8wk0r" path="res://scripts/ui/win_panel.gd" id="1_panel"]
+[ext_resource type="Texture2D" uid="uid://cmr74q252pqpp" path="res://assets/textures/ui/txt_halftone.svg" id="2_halftone"]
 
-[node name="WinPanel" type="CanvasLayer" node_paths=PackedStringArray("dim", "title_label", "result_label", "next_button")]
+[node name="WinPanel" type="CanvasLayer" unique_id=177349947 node_paths=PackedStringArray("dim", "title_label", "result_label", "next_button")]
 visible = false
 script = ExtResource("1_panel")
 dim = NodePath("Dim")
@@ -11,7 +11,7 @@ title_label = NodePath("Dim/Center/Layout/Winner")
 result_label = NodePath("Dim/Center/Layout/Wins")
 next_button = NodePath("Dim/Center/Layout/Buttons/Next")
 
-[node name="Dim" type="ColorRect" parent="."]
+[node name="Dim" type="ColorRect" parent="." unique_id=181353821]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.9411765, 0.4509804, 0.3764706, 0.8)
 
-[node name="Center" type="CenterContainer" parent="Dim"]
+[node name="Center" type="CenterContainer" parent="Dim" unique_id=1383600729]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,12 +28,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Layout" type="Control" parent="Dim/Center"]
+[node name="Layout" type="Control" parent="Dim/Center" unique_id=1237568585]
 custom_minimum_size = Vector2(720, 1280)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Halftone" type="TextureRect" parent="Dim/Center/Layout"]
+[node name="Halftone" type="TextureRect" parent="Dim/Center/Layout" unique_id=1094865166]
 self_modulate = Color(1, 1, 1, 0.35)
 layout_mode = 0
 offset_left = 60.0
@@ -43,7 +43,7 @@ offset_bottom = 860.0
 mouse_filter = 2
 texture = ExtResource("2_halftone")
 
-[node name="Winner" type="Label" parent="Dim/Center/Layout"]
+[node name="Winner" type="Label" parent="Dim/Center/Layout" unique_id=2123999923]
 layout_mode = 0
 offset_top = 410.0
 offset_right = 720.0
@@ -54,7 +54,7 @@ text = "Player 1"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Wins" type="Label" parent="Dim/Center/Layout"]
+[node name="Wins" type="Label" parent="Dim/Center/Layout" unique_id=1239257673]
 layout_mode = 0
 offset_top = 528.0
 offset_right = 720.0
@@ -64,7 +64,7 @@ theme_override_font_sizes/font_size = 150
 text = "WINS!"
 horizontal_alignment = 1
 
-[node name="Buttons" type="VBoxContainer" parent="Dim/Center/Layout"]
+[node name="Buttons" type="VBoxContainer" parent="Dim/Center/Layout" unique_id=1920606525]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 870.0
@@ -72,19 +72,19 @@ offset_right = 580.0
 offset_bottom = 1242.0
 theme_override_constants/separation = 18
 
-[node name="Next" type="Button" parent="Dim/Center/Layout/Buttons"]
+[node name="Next" type="Button" parent="Dim/Center/Layout/Buttons" unique_id=722925109]
 visible = false
 custom_minimum_size = Vector2(440, 112)
 layout_mode = 2
 theme_type_variation = &"PrimaryButton"
 text = "NEXT"
 
-[node name="Restart" type="Button" parent="Dim/Center/Layout/Buttons"]
+[node name="Restart" type="Button" parent="Dim/Center/Layout/Buttons" unique_id=193706152]
 custom_minimum_size = Vector2(440, 112)
 layout_mode = 2
 text = "RESTART"
 
-[node name="Menu" type="Button" parent="Dim/Center/Layout/Buttons"]
+[node name="Menu" type="Button" parent="Dim/Center/Layout/Buttons" unique_id=1594705040]
 custom_minimum_size = Vector2(440, 112)
 layout_mode = 2
 text = "MENU"

@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="CpuDifficulty" format=3]
+[gd_resource type="Resource" script_class="CpuDifficulty" format=3 uid="uid://cp7q85l4fhhas"]
 
-[ext_resource type="Script" path="res://scripts/cpu/cpu_difficulty.gd" id="1_difficulty"]
+[ext_resource type="Script" uid="uid://py8x3rlxplrb" path="res://scripts/cpu/cpu_difficulty.gd" id="1_difficulty"]
 
 [resource]
 script = ExtResource("1_difficulty")
 display_name = "EASY"
-search_depth = 0

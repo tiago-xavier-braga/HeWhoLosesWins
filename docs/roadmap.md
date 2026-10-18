@@ -38,4 +38,7 @@ All project documentation must be kept in the `docs/` folder.
 
 ## Phase 5: Content
 
-- [ ] Create more puzzle levels, beyond the minimum of 15 from Phase 2
+- [x] Create more puzzle levels, beyond the minimum of 15 from Phase 2 (50 in total; see
+  `puzzles.md`)
+- [ ] Make the puzzle menu fit more than 16 levels (scroll or pages); the 4-column grid
+  overflows the screen with 50

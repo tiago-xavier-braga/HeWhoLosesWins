@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PuzzleLevel" format=3]
+
+[ext_resource type="Script" uid="uid://dktuondo02of" path="res://scripts/puzzle/puzzle_level.gd" id="1_puzzle"]
+
+[resource]
+script = ExtResource("1_puzzle")
+max_moves = 3
+player_men = Array[Vector2i]([Vector2i(1, 6), Vector2i(3, 6), Vector2i(7, 6), Vector2i(4, 7)])
+cpu_men = Array[Vector2i]([Vector2i(0, 5)])

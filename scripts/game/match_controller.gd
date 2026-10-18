@@ -4,6 +4,7 @@ extends Node
 signal turn_changed(player: PlayerData)
 
 const START_ROWS: int = 3
+const WINS_TEXT: String = "WINS!"
 
 @export var board_spawner: BoardSpawner
 @export var pieces_spawner: PiecesSpawner
@@ -26,16 +27,21 @@ func _ready() -> void:
 func start_match() -> void:
 	board_spawner.initialize()
 	players = [PlayerData.new(true), PlayerData.new(false)]
-	for player: PlayerData in players:
-		_spawn_player_pieces(player)
+	_set_up_match()
 	pointer_input.initialize(players[0], board_spawner)
 	piece_mover.initialize(players, board_spawner)
 	move_hints.initialize(pointer_input, piece_mover, board_spawner)
-	cpu_player.difficulty = GameSettings.difficulty
 	cpu_player.initialize(players[1], players, board_spawner.board_size)
 	turn_changed.connect(cpu_player.on_turn_changed)
 	piece_mover.piece_moved.connect(_on_piece_moved)
 	_set_turn(0)
+
+
+# PuzzleController overrides this to start from a level instead.
+func _set_up_match() -> void:
+	cpu_player.difficulty = GameSettings.difficulty
+	for player: PlayerData in players:
+		_spawn_player_pieces(player)
 
 
 func _spawn_player_pieces(player: PlayerData) -> void:
@@ -72,4 +78,9 @@ func _on_piece_moved(_piece: Piece) -> void:
 
 func _finish_match(winner: PlayerData) -> void:
 	pointer_input.set_process_unhandled_input(false)
-	win_panel.show_winner("Player %d" % (players.find(winner) + 1))
+	_show_result(winner)
+
+
+# PuzzleController overrides this to show solved or failed instead of the winner.
+func _show_result(winner: PlayerData) -> void:
+	win_panel.show_result("Player %d" % (players.find(winner) + 1), WINS_TEXT)

@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://besqua48idrc7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shadow"]
+bg_color = Color(0.5764706, 0.7294118, 0.6901961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.16862746, 0.24705882, 0.3019608, 0.25)
+shadow_size = 48
+shadow_offset = Vector2(0, 24)
+
 [node name="Board" type="Node2D" unique_id=24103139]
+
+[node name="Shadow" type="Panel" parent="."]
+offset_right = 1024.0
+offset_bottom = 1024.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_shadow")

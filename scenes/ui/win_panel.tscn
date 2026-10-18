@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scripts/ui/win_panel.gd" id="1_panel"]
 [ext_resource type="Texture2D" path="res://assets/textures/ui/txt_halftone.svg" id="2_halftone"]
 
-[node name="WinPanel" type="CanvasLayer" node_paths=PackedStringArray("dim", "title_label", "result_label")]
+[node name="WinPanel" type="CanvasLayer" node_paths=PackedStringArray("dim", "title_label", "result_label", "next_button")]
 visible = false
 script = ExtResource("1_panel")
 dim = NodePath("Dim")
 title_label = NodePath("Dim/Center/Layout/Winner")
 result_label = NodePath("Dim/Center/Layout/Wins")
+next_button = NodePath("Dim/Center/Layout/Buttons/Next")
 
 [node name="Dim" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -68,8 +69,15 @@ layout_mode = 0
 offset_left = 140.0
 offset_top = 870.0
 offset_right = 580.0
-offset_bottom = 1112.0
+offset_bottom = 1242.0
 theme_override_constants/separation = 18
+
+[node name="Next" type="Button" parent="Dim/Center/Layout/Buttons"]
+visible = false
+custom_minimum_size = Vector2(440, 112)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+text = "NEXT"
 
 [node name="Restart" type="Button" parent="Dim/Center/Layout/Buttons"]
 custom_minimum_size = Vector2(440, 112)

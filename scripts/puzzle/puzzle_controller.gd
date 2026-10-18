@@ -8,6 +8,11 @@ const FAILED_TEXT: String = "FAILED"
 var _player_moves: int = 0
 
 
+func _ready() -> void:
+	win_panel.next_button.pressed.connect(_on_next_pressed)
+	super()
+
+
 # The CPU keeps the difficulty set on CpuPlayer in the scene, so every puzzle uses the same one.
 func _set_up_match() -> void:
 	var level: PuzzleLevel = GameSettings.puzzle
@@ -42,9 +47,22 @@ func _finish_match(winner: PlayerData) -> void:
 
 func _show_result(winner: PlayerData) -> void:
 	var solved: bool = winner != cpu_player.player
+	win_panel.next_button.visible = solved and _next_level() != null
 	win_panel.show_result(TITLE_TEXT, SOLVED_TEXT if solved else FAILED_TEXT, solved)
 
 
 func _is_out_of_moves() -> bool:
 	var max_moves: int = GameSettings.puzzle.max_moves
 	return max_moves != PuzzleLevel.NO_LIMIT and _player_moves >= max_moves
+
+
+func _next_level() -> PuzzleLevel:
+	var index: int = GameSettings.puzzles.find(GameSettings.puzzle)
+	if index == -1 or index + 1 >= GameSettings.puzzles.size():
+		return null
+	return GameSettings.puzzles[index + 1]
+
+
+func _on_next_pressed() -> void:
+	GameSettings.puzzle = _next_level()
+	get_tree().reload_current_scene()

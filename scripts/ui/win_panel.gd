@@ -4,6 +4,8 @@ extends CanvasLayer
 @export var dim: ColorRect
 @export var title_label: Label
 @export var result_label: Label
+# Hidden by default; PuzzleController shows it and handles the press.
+@export var next_button: Button
 @export var won_color: Color = Color("4a90c2cc")
 @export var lost_color: Color = Color("f07360cc")
 # A path, because the menu scene already references the game scene that contains this panel.

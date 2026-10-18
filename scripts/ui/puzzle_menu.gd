@@ -24,6 +24,7 @@ func _ready() -> void:
 
 
 func _on_puzzle_pressed(level: PuzzleLevel) -> void:
+	GameSettings.puzzles = puzzles
 	GameSettings.puzzle = level
 	get_tree().change_scene_to_packed(puzzle_scene)
 

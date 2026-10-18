@@ -14,6 +14,8 @@ config/name="He Who Loses Wins"
 run/main_scene="res://scenes/ui/start_menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.19215687, 0.19215687, 0.1764706, 1)
+boot_splash/image="res://assets/textures/ui/txt_boot_splash.png"
 
 [audio]
 

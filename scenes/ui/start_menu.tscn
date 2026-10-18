@@ -1,10 +1,9 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://2iw8j4ly28r6"]
 
-[ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_start"]
+[ext_resource type="Script" uid="uid://c2qo12csklaho" path="res://scripts/ui/start_menu.gd" id="1_start"]
 [ext_resource type="PackedScene" path="res://scenes/ui/main_menu.tscn" id="2_menu"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_bg_pattern.svg" id="3_pattern"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_footer_band.svg" id="4_footer"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_icon_chevron.svg" id="5_chevron"]
+[ext_resource type="Texture2D" uid="uid://ba3cyos4a67tx" path="res://assets/textures/txt_bg_pattern.svg" id="3_pattern"]
+[ext_resource type="Texture2D" uid="uid://cr8jei7ukts87" path="res://assets/textures/txt_footer_band.svg" id="4_footer"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)
@@ -25,7 +24,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="StartMenu" type="Control"]
+[node name="StartMenu" type="Control" unique_id=536969180]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +34,7 @@ grow_vertical = 2
 script = ExtResource("1_start")
 menu_scene = ExtResource("2_menu")
 
-[node name="Gradient" type="TextureRect" parent="."]
+[node name="Gradient" type="TextureRect" parent="." unique_id=1680024119]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +45,7 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_bg")
 expand_mode = 1
 
-[node name="Pattern" type="TextureRect" parent="."]
+[node name="Pattern" type="TextureRect" parent="." unique_id=2073445360]
 self_modulate = Color(1, 1, 1, 0.05)
 texture_repeat = 2
 layout_mode = 1
@@ -60,7 +59,7 @@ texture = ExtResource("3_pattern")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="Footer" type="TextureRect" parent="."]
+[node name="Footer" type="TextureRect" parent="." unique_id=477790862]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -73,7 +72,7 @@ mouse_filter = 2
 texture = ExtResource("4_footer")
 expand_mode = 1
 
-[node name="Credits" type="Label" parent="Footer"]
+[node name="Credits" type="Label" parent="Footer" unique_id=1319625334]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -85,7 +84,7 @@ theme_override_font_sizes/font_size = 26
 text = "MADE WITH GODOT"
 horizontal_alignment = 1
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Center" type="CenterContainer" parent="." unique_id=1752750591]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,12 +93,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Layout" type="Control" parent="Center"]
+[node name="Layout" type="Control" parent="Center" unique_id=1427671848]
 custom_minimum_size = Vector2(720, 1280)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="HeWho" type="Label" parent="Center/Layout"]
+[node name="HeWho" type="Label" parent="Center/Layout" unique_id=1267602175]
 layout_mode = 0
 offset_top = 250.0
 offset_right = 720.0
@@ -109,7 +108,7 @@ theme_override_font_sizes/font_size = 120
 text = "HE WHO"
 horizontal_alignment = 1
 
-[node name="Loses" type="Label" parent="Center/Layout"]
+[node name="Loses" type="Label" parent="Center/Layout" unique_id=245742725]
 layout_mode = 0
 offset_top = 368.0
 offset_right = 720.0
@@ -120,7 +119,7 @@ theme_override_font_sizes/font_size = 172
 text = "LOSES"
 horizontal_alignment = 1
 
-[node name="Wins" type="Label" parent="Center/Layout"]
+[node name="Wins" type="Label" parent="Center/Layout" unique_id=817737815]
 layout_mode = 0
 offset_top = 530.0
 offset_right = 720.0
@@ -130,7 +129,7 @@ theme_override_font_sizes/font_size = 172
 text = "WINS!"
 horizontal_alignment = 1
 
-[node name="Tag" type="Panel" parent="Center/Layout"]
+[node name="Tag" type="Panel" parent="Center/Layout" unique_id=1977327155]
 layout_mode = 0
 offset_left = 452.0
 offset_top = 712.0
@@ -141,7 +140,7 @@ pivot_offset = Vector2(95, 26)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tag")
 
-[node name="Label" type="Label" parent="Center/Layout/Tag"]
+[node name="Label" type="Label" parent="Center/Layout/Tag" unique_id=147938090]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,16 +153,7 @@ text = "CHECKERS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FocusArrow" type="TextureRect" parent="Center/Layout"]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 886.0
-offset_right = 110.0
-offset_bottom = 926.0
-mouse_filter = 2
-texture = ExtResource("5_chevron")
-
-[node name="Play" type="Button" parent="Center/Layout"]
+[node name="Play" type="Button" parent="Center/Layout" unique_id=1316836742]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 860.0

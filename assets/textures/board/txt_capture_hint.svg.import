@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dafels10gq22"
-path="res://.godot/imported/txt_button_locked.svg-7a6edbc4e7e91e8f47a8d14af8213c0b.ctex"
+uid="uid://c804a4625v2cv"
+path="res://.godot/imported/txt_capture_hint.svg-76cc2248b91711a4b4aa3717215bae0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/txt_button_locked.svg"
-dest_files=["res://.godot/imported/txt_button_locked.svg-7a6edbc4e7e91e8f47a8d14af8213c0b.ctex"]
+source_file="res://assets/textures/board/txt_capture_hint.svg"
+dest_files=["res://.godot/imported/txt_capture_hint.svg-76cc2248b91711a4b4aa3717215bae0a.ctex"]
 
 [params]
 

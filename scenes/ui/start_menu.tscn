@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c2qo12csklaho" path="res://scripts/ui/start_menu.gd" id="1_start"]
 [ext_resource type="PackedScene" path="res://scenes/ui/main_menu.tscn" id="2_menu"]
-[ext_resource type="Texture2D" uid="uid://ba3cyos4a67tx" path="res://assets/textures/txt_bg_pattern.svg" id="3_pattern"]
-[ext_resource type="Texture2D" uid="uid://cr8jei7ukts87" path="res://assets/textures/txt_footer_band.svg" id="4_footer"]
+[ext_resource type="Texture2D" uid="uid://ba3cyos4a67tx" path="res://assets/textures/ui/txt_bg_pattern.svg" id="3_pattern"]
+[ext_resource type="Texture2D" uid="uid://cr8jei7ukts87" path="res://assets/textures/ui/txt_footer_band.svg" id="4_footer"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)

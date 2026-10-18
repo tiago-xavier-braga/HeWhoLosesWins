@@ -13,9 +13,9 @@
 [ext_resource type="Resource" path="res://resources/puzzles/puzzle_08.tres" id="4_puzzle_08"]
 [ext_resource type="Resource" path="res://resources/puzzles/puzzle_09.tres" id="4_puzzle_09"]
 [ext_resource type="Resource" path="res://resources/puzzles/puzzle_10.tres" id="4_puzzle_10"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_bg_pattern.svg" id="5_pattern"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_icon_lock.svg" id="6_lock"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_icon_back.svg" id="7_back"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_bg_pattern.svg" id="5_pattern"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_lock.svg" id="6_lock"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_back.svg" id="7_back"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)

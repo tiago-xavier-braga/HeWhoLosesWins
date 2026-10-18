@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://54ty87lt207c"]
 
 [ext_resource type="Script" uid="uid://n1t7qh6hqkup" path="res://scripts/board/square.gd" id="1_010gg"]
-[ext_resource type="Texture2D" uid="uid://2jyq27gfoa8i" path="res://assets/textures/txt_piece_selected.svg" id="1_yigd6"]
-[ext_resource type="Texture2D" uid="uid://c804a4625v2cv" path="res://assets/textures/txt_capture_hint.svg" id="3_010gg"]
-[ext_resource type="Texture2D" uid="uid://b7gfd22ihaopm" path="res://assets/textures/txt_move_hint.svg" id="5_move"]
-[ext_resource type="Texture2D" uid="uid://bvimuuc4kaba0" path="res://assets/textures/txt_square.svg" id="4_nyn02"]
+[ext_resource type="Texture2D" uid="uid://2jyq27gfoa8i" path="res://assets/textures/board/txt_piece_selected.svg" id="1_yigd6"]
+[ext_resource type="Texture2D" uid="uid://c804a4625v2cv" path="res://assets/textures/board/txt_capture_hint.svg" id="3_010gg"]
+[ext_resource type="Texture2D" uid="uid://b7gfd22ihaopm" path="res://assets/textures/board/txt_move_hint.svg" id="5_move"]
+[ext_resource type="Texture2D" uid="uid://bvimuuc4kaba0" path="res://assets/textures/board/txt_square.svg" id="4_nyn02"]
 
 [node name="Square" type="Node2D" unique_id=334273058 node_paths=PackedStringArray("background", "effect_sprite")]
 script = ExtResource("1_010gg")

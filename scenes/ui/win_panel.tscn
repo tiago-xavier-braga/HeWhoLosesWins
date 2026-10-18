@@ -1,7 +1,7 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/win_panel.gd" id="1_panel"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_halftone.svg" id="2_halftone"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_halftone.svg" id="2_halftone"]
 
 [node name="WinPanel" type="CanvasLayer" node_paths=PackedStringArray("dim", "title_label", "result_label")]
 visible = false

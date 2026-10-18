@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ba8re3f1sxfw"]
 
 [ext_resource type="Script" uid="uid://cxl440ubu1hfi" path="res://scripts/piece/piece.gd" id="1_piece"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_piece_white.svg" id="2_white"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_piece_black.svg" id="2_black"]
-[ext_resource type="Texture2D" uid="uid://dljxe57rgi4kq" path="res://assets/textures/txt_crown.svg" id="3_crown"]
+[ext_resource type="Texture2D" path="res://assets/textures/piece/txt_piece_white.svg" id="2_white"]
+[ext_resource type="Texture2D" path="res://assets/textures/piece/txt_piece_black.svg" id="2_black"]
+[ext_resource type="Texture2D" uid="uid://dljxe57rgi4kq" path="res://assets/textures/piece/txt_crown.svg" id="3_crown"]
 
 [node name="Piece" type="Node2D" unique_id=617610606 node_paths=PackedStringArray("piece_sprite", "crown_sprite")]
 scale = Vector2(0.75, 0.75)

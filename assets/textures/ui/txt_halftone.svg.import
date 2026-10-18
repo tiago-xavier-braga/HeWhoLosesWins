@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmr74q252pqpp"
-path="res://.godot/imported/txt_halftone.svg-a767686cbd4f880aebde990bdec7de46.ctex"
+path="res://.godot/imported/txt_halftone.svg-dfa7724e694eb57ae204d2337362b901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/txt_halftone.svg"
-dest_files=["res://.godot/imported/txt_halftone.svg-a767686cbd4f880aebde990bdec7de46.ctex"]
+source_file="res://assets/textures/ui/txt_halftone.svg"
+dest_files=["res://.godot/imported/txt_halftone.svg-dfa7724e694eb57ae204d2337362b901.ctex"]
 
 [params]
 

@@ -1,24 +1,26 @@
-[gd_resource type="Theme" format=3]
+[gd_resource type="Theme" format=3 uid="uid://dyy240n5gbaug"]
 
-[ext_resource type="FontFile" path="res://assets/fonts/font_lilita_one.ttf" id="1_font"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_secondary.svg" id="2_secondary"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_secondary_hover.svg" id="3_secondary_hover"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_secondary_pressed.svg" id="4_secondary_pressed"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_primary.svg" id="5_primary"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_primary_hover.svg" id="6_primary_hover"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_primary_pressed.svg" id="7_primary_pressed"]
-[ext_resource type="Texture2D" path="res://assets/textures/txt_button_locked.svg" id="8_locked"]
+[ext_resource type="FontFile" uid="uid://d1hsmvkm008ik" path="res://assets/fonts/font_lilita_one.ttf" id="1_font"]
+[ext_resource type="Texture2D" uid="uid://bbjoa3mg23ege" path="res://assets/textures/txt_button_secondary.svg" id="2_secondary"]
+[ext_resource type="Texture2D" uid="uid://cg7gd27i7qbjs" path="res://assets/textures/txt_button_secondary_hover.svg" id="3_secondary_hover"]
+[ext_resource type="Texture2D" uid="uid://5tg78vuptps5" path="res://assets/textures/txt_button_secondary_pressed.svg" id="4_secondary_pressed"]
+[ext_resource type="Texture2D" uid="uid://udutj320d3nx" path="res://assets/textures/txt_button_primary.svg" id="5_primary"]
+[ext_resource type="Texture2D" uid="uid://cy1rob6sp3qfl" path="res://assets/textures/txt_button_primary_hover.svg" id="6_primary_hover"]
+[ext_resource type="Texture2D" uid="uid://ba6a3dcscuk6u" path="res://assets/textures/txt_button_primary_pressed.svg" id="7_primary_pressed"]
+[ext_resource type="Texture2D" uid="uid://dafels10gq22" path="res://assets/textures/txt_button_locked.svg" id="8_locked"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_secondary"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locked"]
 content_margin_left = 24.0
 content_margin_top = 2.0
 content_margin_right = 24.0
 content_margin_bottom = 6.0
-texture = ExtResource("2_secondary")
+texture = ExtResource("8_locked")
 texture_margin_left = 32.0
 texture_margin_top = 50.0
 texture_margin_right = 32.0
 texture_margin_bottom = 60.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_secondary_hover"]
 content_margin_left = 24.0
@@ -42,16 +44,31 @@ texture_margin_top = 50.0
 texture_margin_right = 32.0
 texture_margin_bottom = 60.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_primary"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_secondary"]
 content_margin_left = 24.0
 content_margin_top = 2.0
 content_margin_right = 24.0
 content_margin_bottom = 6.0
-texture = ExtResource("5_primary")
+texture = ExtResource("2_secondary")
 texture_margin_left = 32.0
 texture_margin_top = 50.0
 texture_margin_right = 32.0
 texture_margin_bottom = 60.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locked_compact"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+texture = ExtResource("8_locked")
+texture_margin_left = 32.0
+texture_margin_top = 50.0
+texture_margin_right = 32.0
+texture_margin_bottom = 60.0
+
+[sub_resource type="FontVariation" id="FontVariation_logo"]
+base_font = ExtResource("1_font")
+variation_embolden = -0.6
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_primary_hover"]
 content_margin_left = 24.0
@@ -75,33 +92,16 @@ texture_margin_top = 50.0
 texture_margin_right = 32.0
 texture_margin_bottom = 60.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locked"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_primary"]
 content_margin_left = 24.0
 content_margin_top = 2.0
 content_margin_right = 24.0
 content_margin_bottom = 6.0
-texture = ExtResource("8_locked")
+texture = ExtResource("5_primary")
 texture_margin_left = 32.0
 texture_margin_top = 50.0
 texture_margin_right = 32.0
 texture_margin_bottom = 60.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_locked_compact"]
-content_margin_left = 20.0
-content_margin_top = 2.0
-content_margin_right = 12.0
-content_margin_bottom = 6.0
-texture = ExtResource("8_locked")
-texture_margin_left = 32.0
-texture_margin_top = 50.0
-texture_margin_right = 32.0
-texture_margin_bottom = 60.0
-
-[sub_resource type="FontVariation" id="FontVariation_logo"]
-base_font = ExtResource("1_font")
-variation_embolden = -0.6
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
 [resource]
 default_font = ExtResource("1_font")

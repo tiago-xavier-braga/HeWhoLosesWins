@@ -6,6 +6,7 @@ signal move_animated
 
 const MOVE_DURATION: float = 0.2
 const CAPTURE_FADE_DURATION: float = 0.15
+const CPU_MOVE_PITCH: float = 0.85
 
 var current_player: PlayerData
 
@@ -63,7 +64,10 @@ func _on_move_requested(piece: Piece, to_cell: Vector2i) -> void:
 	_animate_step(move, 0)
 
 
+# The sound follows the animation, not the state change, so each hop is heard as it lands.
 func _animate_step(move: MoveRules.Move, index: int) -> void:
+	if index > 0:
+		Sfx.play(Sfx.PIECE_MOVE, 1.0 if move.piece.is_white else CPU_MOVE_PITCH)
 	if index >= move.path.size():
 		move_animated.emit()
 		return

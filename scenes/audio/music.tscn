@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="AudioStream" path="res://assets/audio/music_main.ogg" id="1_music"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_music")
+volume_db = -8.0
+autoplay = true
+bus = &"Music"

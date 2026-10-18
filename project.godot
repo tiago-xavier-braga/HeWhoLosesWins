@@ -15,10 +15,16 @@ run/main_scene="res://scenes/ui/start_menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://resources/audio_bus_layout.tres"
+
 [autoload]
 
 LeafTween="*uid://qbx4dagkdwpi"
 GameSettings="*res://scripts/game/game_settings.gd"
+Sfx="*res://scripts/audio/sfx.gd"
+Music="*res://scenes/audio/music.tscn"
 
 [display]
 

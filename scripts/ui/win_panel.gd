@@ -16,6 +16,7 @@ func show_result(title: String, result: String, player_won: bool) -> void:
 	dim.color = won_color if player_won else lost_color
 	title_label.text = title
 	result_label.text = result
+	Sfx.play(Sfx.WIN if player_won else Sfx.LOSE)
 	show()
 
 

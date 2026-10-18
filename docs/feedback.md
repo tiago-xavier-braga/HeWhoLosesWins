@@ -41,3 +41,18 @@ backlog in `roadmap.md`, not straight into code.
   board, defending and eliminating the pieces."
 - **Status:** idea, not triaged. Out of the current roadmap phase; candidate for
   the backlog.
+
+### 4. Win/lose screen appears before the last move finishes
+
+- **Date:** 2026-10-18
+- **Source:** playtester
+- **Feedback:** "At the end of the game, when we win or lose... On the last move
+  we can't really see the ending... Before the move finishes, it already jumps
+  to the menu. We don't even get to see losing!!! Haha"
+- **Summary:** When the final move ends the game, the win/lose menu appears
+  before the move (and its ending) has finished playing, so the player never
+  sees the result on the board.
+- **Likely cause:** the game-over check or the menu transition runs without
+  waiting for the piece's move animation to finish.
+- **Status:** not triaged. Check the order between the move animation and the
+  game-over menu; the menu should wait until the move completes.

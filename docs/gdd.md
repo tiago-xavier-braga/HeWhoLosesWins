@@ -72,3 +72,46 @@ The goal is to lose, so the winner is the first player who:
   highlighted: a dot for a move, a ring for a capture.
 - Click or tap a highlighted square to move. For a multi-jump, any square on
   the path starts the whole forced capture.
+
+## Puzzles
+
+A puzzle is a fixed starting position played against the CPU. All the normal
+rules apply (mandatory capture, longest capture, promotion).
+
+### Goals
+
+Each puzzle has one goal:
+
+- **Lose all your pieces:** no move limit.
+- **Lose all your pieces in N moves:** the player must reach the goal within N
+  of their own moves. A multi-jump counts as one move.
+- **Challenge:** an uneven position, with the same goal of losing all your
+  pieces:
+  - **1 vs All:** the player has a single piece against many.
+  - **All vs 1:** the player has many pieces against a single one.
+
+### Opponent
+
+- The CPU plays the other side at a fixed difficulty, the hardest one, and
+  always picks its best move.
+
+### Failing, retry and tip
+
+- The player fails the puzzle when the CPU wins first or, in an N-move puzzle,
+  when the N moves are used up.
+- The player can retry the puzzle.
+- The player can ask for a tip, which shows a good move. The tip is unlocked by
+  watching an ad.
+
+### Progression
+
+- The player can open the list of all puzzles.
+- Puzzles must be solved in order: a puzzle can't be played until the previous
+  one is solved, so none can be skipped.
+- Progress is saved, on web and Android. How it's saved is decided later.
+
+### Level data
+
+- Each puzzle is a `.tres` resource, like the CPU difficulties.
+- Its squares (men and kings for each side) are set in the Inspector.
+

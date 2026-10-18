@@ -1,0 +1,150 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/puzzle_menu.gd" id="1_menu"]
+[ext_resource type="PackedScene" path="res://scenes/levels/lvl_puzzle.tscn" id="2_puzzle"]
+[ext_resource type="Script" path="res://scripts/puzzle/puzzle_level.gd" id="3_level_script"]
+[ext_resource type="Resource" uid="uid://0wn40lde1q5v" path="res://resources/puzzles/puzzle_01.tres" id="4_puzzle_01"]
+[ext_resource type="Texture2D" path="res://assets/textures/txt_bg_pattern.svg" id="5_pattern"]
+[ext_resource type="Texture2D" path="res://assets/textures/txt_icon_lock.svg" id="6_lock"]
+[ext_resource type="Texture2D" path="res://assets/textures/txt_icon_back.svg" id="7_back"]
+
+[sub_resource type="Gradient" id="Gradient_bg"]
+colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bg"]
+gradient = SubResource("Gradient_bg")
+fill_to = Vector2(0, 1)
+
+[node name="PuzzleMenu" type="Control" node_paths=PackedStringArray("grid", "open_template", "locked_template")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+puzzle_scene = ExtResource("2_puzzle")
+grid = NodePath("Center/Layout/Grid")
+open_template = NodePath("Center/Layout/OpenTemplate")
+locked_template = NodePath("Center/Layout/LockedTemplate")
+puzzles = Array[ExtResource("3_level_script")]([ExtResource("4_puzzle_01")])
+
+[node name="Gradient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_bg")
+expand_mode = 1
+
+[node name="Pattern" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.05)
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_pattern")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layout" type="Control" parent="Center"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HeWho" type="Label" parent="Center/Layout"]
+layout_mode = 0
+offset_top = 110.0
+offset_right = 720.0
+offset_bottom = 180.0
+theme_type_variation = &"LogoSmallLabel"
+theme_override_font_sizes/font_size = 68
+text = "HE WHO"
+horizontal_alignment = 1
+
+[node name="Loses" type="Label" parent="Center/Layout"]
+layout_mode = 0
+offset_top = 178.0
+offset_right = 720.0
+offset_bottom = 278.0
+theme_type_variation = &"LogoSmallLabel"
+theme_override_colors/font_color = Color(0.9411765, 0.4509804, 0.3764706, 1)
+theme_override_font_sizes/font_size = 98
+text = "LOSES"
+horizontal_alignment = 1
+
+[node name="Wins" type="Label" parent="Center/Layout"]
+layout_mode = 0
+offset_top = 272.0
+offset_right = 720.0
+offset_bottom = 372.0
+theme_type_variation = &"LogoSmallLabel"
+theme_override_font_sizes/font_size = 98
+text = "WINS!"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Center/Layout"]
+layout_mode = 0
+offset_top = 418.0
+offset_right = 720.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 36
+text = "SELECT PUZZLE"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Center/Layout"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 484.0
+offset_right = 580.0
+offset_bottom = 980.0
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="OpenTemplate" type="Button" parent="Center/Layout"]
+visible = false
+custom_minimum_size = Vector2(98, 112)
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 112.0
+text = "1"
+
+[node name="LockedTemplate" type="Button" parent="Center/Layout"]
+visible = false
+custom_minimum_size = Vector2(98, 112)
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 112.0
+theme_type_variation = &"LockedButton"
+disabled = true
+icon = ExtResource("6_lock")
+icon_alignment = 1
+
+[node name="Back" type="Button" parent="Center/Layout"]
+custom_minimum_size = Vector2(104, 112)
+layout_mode = 0
+offset_left = 140.0
+offset_top = 1140.0
+offset_right = 244.0
+offset_bottom = 1252.0
+icon = ExtResource("7_back")
+icon_alignment = 1
+
+[connection signal="pressed" from="Center/Layout/Back" to="." method="_on_back_pressed"]

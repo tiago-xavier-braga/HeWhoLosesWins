@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" path="res://assets/textures/txt_level_pips_04.svg" id="12_pips_04"]
 [ext_resource type="Texture2D" path="res://assets/textures/txt_icon_lock.svg" id="13_lock"]
 [ext_resource type="Texture2D" path="res://assets/textures/txt_icon_back.svg" id="14_back"]
+[ext_resource type="PackedScene" path="res://scenes/ui/puzzle_menu.tscn" id="15_puzzles"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.8039216, 0.9254902, 0.9254902, 1, 0.84705883, 0.972549, 0.94509804, 1)
@@ -31,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 game_scene = ExtResource("2_game")
+puzzle_menu_scene = ExtResource("15_puzzles")
 options = NodePath("Center/Layout/Options")
 difficulties = Array[ExtResource("9_difficulty")]([ExtResource("3_easy"), ExtResource("4_medium"), ExtResource("5_hard"), ExtResource("6_extreme")])
 
@@ -177,7 +179,7 @@ offset_bottom = 59.0
 mouse_filter = 2
 texture = ExtResource("12_pips_04")
 
-[node name="ComingSoon" type="HBoxContainer" parent="Center/Layout"]
+[node name="Modes" type="HBoxContainer" parent="Center/Layout"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 1004.0
@@ -185,15 +187,12 @@ offset_right = 580.0
 offset_bottom = 1116.0
 theme_override_constants/separation = 16
 
-[node name="Puzzles" type="Button" parent="Center/Layout/ComingSoon"]
+[node name="Puzzles" type="Button" parent="Center/Layout/Modes"]
 custom_minimum_size = Vector2(212, 112)
 layout_mode = 2
-theme_type_variation = &"LockedButton"
-disabled = true
 text = "PUZZLES"
-icon = ExtResource("13_lock")
 
-[node name="TwoPlayers" type="Button" parent="Center/Layout/ComingSoon"]
+[node name="TwoPlayers" type="Button" parent="Center/Layout/Modes"]
 custom_minimum_size = Vector2(212, 112)
 layout_mode = 2
 theme_type_variation = &"LockedButton"
@@ -211,4 +210,5 @@ offset_bottom = 1252.0
 icon = ExtResource("14_back")
 icon_alignment = 1
 
+[connection signal="pressed" from="Center/Layout/Modes/Puzzles" to="." method="_on_puzzles_pressed"]
 [connection signal="pressed" from="Center/Layout/Back" to="." method="_on_back_pressed"]

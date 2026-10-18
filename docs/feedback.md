@@ -54,5 +54,6 @@ backlog in `roadmap.md`, not straight into code.
   sees the result on the board.
 - **Likely cause:** the game-over check or the menu transition runs without
   waiting for the piece's move animation to finish.
-- **Status:** not triaged. Check the order between the move animation and the
-  game-over menu; the menu should wait until the move completes.
+- **Status:** fixed (2026-10-18), not released yet. The result panel now waits
+  for the last move's animation to finish, then `MatchController.result_delay`
+  (0.5 s by default) before it shows.

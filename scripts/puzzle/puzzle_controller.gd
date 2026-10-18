@@ -4,6 +4,8 @@ extends MatchController
 const TITLE_TEXT: String = "Puzzle"
 const SOLVED_TEXT: String = "SOLVED!"
 const FAILED_TEXT: String = "FAILED"
+const PUZZLE_MODE_TEXT: String = "PUZZLE %02d"
+const LIMIT_TEXT: String = " · LOSE ALL IN %d"
 
 var _player_moves: int = 0
 
@@ -11,6 +13,11 @@ var _player_moves: int = 0
 func _ready() -> void:
 	win_panel.next_button.pressed.connect(_on_next_pressed)
 	super()
+
+
+func start_match() -> void:
+	super()
+	_show_moves_left()
 
 
 # The CPU keeps the difficulty set on CpuPlayer in the scene, so every puzzle uses the same one.
@@ -24,6 +31,13 @@ func _set_up_match() -> void:
 	pieces_spawner.spawn_kings(players[1], level.cpu_kings, cell_size, parent)
 
 
+func _mode_text() -> String:
+	var text: String = PUZZLE_MODE_TEXT % (GameSettings.puzzles.find(GameSettings.puzzle) + 1)
+	if GameSettings.puzzle.max_moves != PuzzleLevel.NO_LIMIT:
+		text += LIMIT_TEXT % GameSettings.puzzle.max_moves
+	return text
+
+
 # Checked when the turn comes back, so the CPU's reply to the last allowed move still counts.
 func _set_turn(index: int) -> void:
 	if players[index] != cpu_player.player and _is_out_of_moves():
@@ -32,10 +46,11 @@ func _set_turn(index: int) -> void:
 	super(index)
 
 
-func _on_piece_moved(piece: Piece) -> void:
+func _on_piece_moved(piece: Piece, from_cell: Vector2i) -> void:
 	if current_player != cpu_player.player:
 		_player_moves += 1
-	super(piece)
+		_show_moves_left()
+	super(piece, from_cell)
 
 
 func _finish_match(winner: PlayerData) -> void:
@@ -54,6 +69,12 @@ func _show_result(winner: PlayerData) -> void:
 func _is_out_of_moves() -> bool:
 	var max_moves: int = GameSettings.puzzle.max_moves
 	return max_moves != PuzzleLevel.NO_LIMIT and _player_moves >= max_moves
+
+
+func _show_moves_left() -> void:
+	var max_moves: int = GameSettings.puzzle.max_moves
+	if max_moves != PuzzleLevel.NO_LIMIT:
+		hud.show_moves_left(max_moves - _player_moves)
 
 
 func _next_level() -> PuzzleLevel:

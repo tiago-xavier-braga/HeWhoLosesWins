@@ -5,7 +5,7 @@
 
 [node name="LvlPuzzle" instance=ExtResource("1_game")]
 
-[node name="MatchController" parent="." index="3" node_paths=PackedStringArray("board_spawner", "pieces_spawner", "pointer_input", "piece_mover", "move_hints", "win_panel", "cpu_player")]
+[node name="MatchController" parent="." index="3" node_paths=PackedStringArray("board_spawner", "pieces_spawner", "pointer_input", "piece_mover", "move_hints", "win_panel", "cpu_player", "hud")]
 script = ExtResource("2_puzzle")
 board_spawner = NodePath("../BoardSpawner")
 pieces_spawner = NodePath("../PiecesSpawner")
@@ -14,6 +14,10 @@ piece_mover = NodePath("../PieceMover")
 move_hints = NodePath("../MoveHints")
 win_panel = NodePath("../WinPanel")
 cpu_player = NodePath("../CpuPlayer")
+hud = NodePath("../GameHud")
 
 [node name="WinPanel" parent="." index="6"]
+menu_scene_path = "res://scenes/ui/puzzle_menu.tscn"
+
+[node name="GameHud" parent="." index="9"]
 menu_scene_path = "res://scenes/ui/puzzle_menu.tscn"

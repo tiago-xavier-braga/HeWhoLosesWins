@@ -1,0 +1,176 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/player_bar.gd" id="1_bar"]
+[ext_resource type="Texture2D" path="res://assets/textures/piece/txt_piece_white.svg" id="2_white"]
+[ext_resource type="Texture2D" path="res://assets/textures/piece/txt_piece_black.svg" id="3_black"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_pip_on.svg" id="4_pip_on"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_pip_off.svg" id="5_pip_off"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idle"]
+bg_color = Color(1, 1, 1, 0.35)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_active"]
+bg_color = Color(1, 1, 1, 0.75)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9411765, 0.4509804, 0.3764706, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avatar"]
+bg_color = Color(0.5764706, 0.7294118, 0.6901961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.16862746, 0.24705882, 0.3019608, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_status"]
+content_margin_left = 14.0
+content_margin_top = 2.0
+content_margin_right = 14.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9411765, 0.4509804, 0.3764706, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="PlayerBar" type="Control" node_paths=PackedStringArray("background", "avatar", "name_label", "tag_label", "status", "status_label", "pips", "pip_template", "count_label", "count_caption")]
+custom_minimum_size = Vector2(648, 88)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 648.0
+offset_bottom = 88.0
+mouse_filter = 2
+script = ExtResource("1_bar")
+background = NodePath("Background")
+avatar = NodePath("Avatar/Piece")
+name_label = NodePath("Name/NameLabel")
+tag_label = NodePath("Name/TagLabel")
+status = NodePath("Name/Status")
+status_label = NodePath("Name/Status/StatusLabel")
+pips = NodePath("Pips")
+pip_template = NodePath("Pips/PipTemplate")
+count_label = NodePath("Count")
+count_caption = NodePath("CountCaption")
+white_texture = ExtResource("2_white")
+black_texture = ExtResource("3_black")
+pip_on = ExtResource("4_pip_on")
+pip_off = ExtResource("5_pip_off")
+idle_style = SubResource("StyleBoxFlat_idle")
+active_style = SubResource("StyleBoxFlat_active")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_idle")
+
+[node name="Avatar" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 76.0
+offset_bottom = 76.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_avatar")
+
+[node name="Piece" type="TextureRect" parent="Avatar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 58.0
+offset_bottom = 58.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 10.0
+offset_right = 452.0
+offset_bottom = 50.0
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="NameLabel" type="Label" parent="Name"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "YOU"
+vertical_alignment = 1
+
+[node name="TagLabel" type="Label" parent="Name"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.43137255, 0.52156866, 0.5019608, 1)
+theme_override_font_sizes/font_size = 20
+text = "HARD"
+vertical_alignment = 1
+
+[node name="Status" type="PanelContainer" parent="Name"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="StatusLabel" type="Label" parent="Name/Status"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "YOUR TURN"
+
+[node name="Pips" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 58.0
+offset_right = 452.0
+offset_bottom = 72.0
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="PipTemplate" type="TextureRect" parent="Pips"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_pip_on")
+
+[node name="Count" type="Label" parent="."]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 6.0
+offset_right = 632.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 44
+text = "12"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CountCaption" type="Label" parent="."]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 54.0
+offset_right = 632.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.43137255, 0.52156866, 0.5019608, 1)
+theme_override_font_sizes/font_size = 18
+text = "LEFT"
+horizontal_alignment = 2
+vertical_alignment = 1

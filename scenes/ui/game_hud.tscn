@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_hud.gd" id="1_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/player_bar.tscn" id="2_bar"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_home.svg" id="3_home"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/txt_icon_restart.svg" id="4_restart"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mode"]
+content_margin_left = 24.0
+content_margin_top = 4.0
+content_margin_right = 24.0
+content_margin_bottom = 4.0
+bg_color = Color(0.16862746, 0.24705882, 0.3019608, 0.85)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="GameHud" type="CanvasLayer" node_paths=PackedStringArray("mode_label", "opponent_bar", "player_bar")]
+script = ExtResource("1_hud")
+mode_label = NodePath("Center/Layout/Mode/Pill/ModeLabel")
+opponent_bar = NodePath("Center/Layout/OpponentBar")
+player_bar = NodePath("Center/Layout/PlayerBar")
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layout" type="Control" parent="Center"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Mode" type="CenterContainer" parent="Center/Layout"]
+layout_mode = 0
+offset_top = 110.0
+offset_right = 720.0
+offset_bottom = 158.0
+mouse_filter = 2
+
+[node name="Pill" type="PanelContainer" parent="Center/Layout/Mode"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mode")
+
+[node name="ModeLabel" type="Label" parent="Center/Layout/Mode/Pill"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "VS CPU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OpponentBar" parent="Center/Layout" instance=ExtResource("2_bar")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 208.0
+offset_right = 684.0
+offset_bottom = 296.0
+
+[node name="PlayerBar" parent="Center/Layout" instance=ExtResource("2_bar")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 984.0
+offset_right = 684.0
+offset_bottom = 1072.0
+
+[node name="Actions" type="HBoxContainer" parent="Center/Layout"]
+layout_mode = 0
+offset_top = 1112.0
+offset_right = 720.0
+offset_bottom = 1224.0
+mouse_filter = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Home" type="Button" parent="Center/Layout/Actions"]
+custom_minimum_size = Vector2(104, 112)
+layout_mode = 2
+icon = ExtResource("3_home")
+icon_alignment = 1
+
+[node name="Restart" type="Button" parent="Center/Layout/Actions"]
+custom_minimum_size = Vector2(104, 112)
+layout_mode = 2
+icon = ExtResource("4_restart")
+icon_alignment = 1
+
+[connection signal="pressed" from="Center/Layout/Actions/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Center/Layout/Actions/Restart" to="." method="_on_restart_pressed"]

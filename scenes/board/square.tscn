@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b7gfd22ihaopm" path="res://assets/textures/board/txt_move_hint.svg" id="5_move"]
 [ext_resource type="Texture2D" uid="uid://bvimuuc4kaba0" path="res://assets/textures/board/txt_square.svg" id="4_nyn02"]
 
-[node name="Square" type="Node2D" unique_id=334273058 node_paths=PackedStringArray("background", "effect_sprite")]
+[node name="Square" type="Node2D" unique_id=334273058 node_paths=PackedStringArray("background", "effect_sprite", "last_move_sprite", "rank_label", "file_label")]
 script = ExtResource("1_010gg")
 background = NodePath("Background")
 effect_sprite = NodePath("EffectSprite")
+last_move_sprite = NodePath("LastMoveSprite")
+rank_label = NodePath("Rank")
+file_label = NodePath("File")
 selected_square = ExtResource("1_yigd6")
 move_hint = ExtResource("5_move")
 capture_hint = ExtResource("3_010gg")
@@ -17,6 +20,28 @@ capture_hint = ExtResource("3_010gg")
 [node name="Background" type="Sprite2D" parent="." unique_id=492129828]
 position = Vector2(64, 64)
 texture = ExtResource("4_nyn02")
+
+[node name="LastMoveSprite" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.7)
+position = Vector2(64, 64)
+texture = ExtResource("1_yigd6")
+
+[node name="Rank" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 24
+
+[node name="File" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 92.0
+offset_right = 120.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="EffectSprite" type="Sprite2D" parent="." unique_id=1595450650]
 position = Vector2(64, 64)

@@ -5,6 +5,7 @@ signal turn_changed(player: PlayerData)
 
 const START_ROWS: int = 3
 const WINS_TEXT: String = "WINS!"
+const MODE_TEXT: String = "VS CPU"
 
 @export var board_spawner: BoardSpawner
 @export var pieces_spawner: PiecesSpawner
@@ -13,6 +14,7 @@ const WINS_TEXT: String = "WINS!"
 @export var move_hints: MoveHints
 @export var win_panel: WinPanel
 @export var cpu_player: CpuPlayer
+@export var hud: GameHud
 ## Seconds the board stays visible after the last move, before the result panel.
 @export var result_delay: float = 0.5
 
@@ -34,7 +36,10 @@ func start_match() -> void:
 	piece_mover.initialize(players, board_spawner)
 	move_hints.initialize(pointer_input, piece_mover, board_spawner)
 	cpu_player.initialize(players[1], players, board_spawner.board_size)
+	hud.initialize(players[0], players[1], piece_mover, _mode_text(),
+			cpu_player.difficulty.display_name)
 	turn_changed.connect(cpu_player.on_turn_changed)
+	turn_changed.connect(hud.on_turn_changed)
 	piece_mover.piece_moved.connect(_on_piece_moved)
 	_set_turn(0)
 
@@ -57,6 +62,11 @@ func _spawn_player_pieces(player: PlayerData) -> void:
 	pieces_spawner.spawn_pieces(player, cells, board_spawner.square_size, board_spawner.board)
 
 
+# PuzzleController overrides this to show the puzzle number and its move limit.
+func _mode_text() -> String:
+	return MODE_TEXT
+
+
 func _set_turn(index: int) -> void:
 	_current_index = index
 	current_player = players[index]
@@ -66,7 +76,7 @@ func _set_turn(index: int) -> void:
 	turn_changed.emit(current_player)
 
 
-func _on_piece_moved(_piece: Piece) -> void:
+func _on_piece_moved(_piece: Piece, _from_cell: Vector2i) -> void:
 	for player: PlayerData in players:
 		if player.has_won():
 			_finish_match(player)

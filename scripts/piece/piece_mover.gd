@@ -1,7 +1,7 @@
 class_name PieceMover
 extends Node
 
-signal piece_moved(piece: Piece)
+signal piece_moved(piece: Piece, from_cell: Vector2i)
 signal move_animated
 
 const MOVE_DURATION: float = 0.2
@@ -29,6 +29,12 @@ func can_move(player: PlayerData) -> bool:
 	return not _rules.get_legal_moves(player).is_empty()
 
 
+# Capturing is mandatory, so the legal moves are either all captures or none.
+func must_capture(player: PlayerData) -> bool:
+	var moves: Array[MoveRules.Move] = _rules.get_legal_moves(player)
+	return not moves.is_empty() and not moves[0].captured.is_empty()
+
+
 func get_moves(piece: Piece) -> Array[MoveRules.Move]:
 	var moves: Array[MoveRules.Move] = []
 	for move: MoveRules.Move in _rules.get_legal_moves(_owner_of(piece)):
@@ -49,10 +55,11 @@ func _on_move_requested(piece: Piece, to_cell: Vector2i) -> void:
 	for taken: Piece in move.captured:
 		_owner_of(taken).remove_piece(taken)
 		_stop_move(taken)
+	var from_cell: Vector2i = piece.cell
 	piece.cell = move.path.back()
 	if _reaches_last_row(piece):
 		piece.set_checker()
-	piece_moved.emit(piece)
+	piece_moved.emit(piece, from_cell)
 	_animate_step(move, 0)
 
 

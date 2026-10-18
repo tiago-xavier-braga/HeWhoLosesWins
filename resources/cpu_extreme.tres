@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_difficulty")
+display_name = "EXTREME"
 search_depth = 6

@@ -1,6 +1,9 @@
 class_name BoardSpawner
 extends Node
 
+const FILES: String = "abcdefgh"
+const BASE_WIDTH_SETTING: String = "display/window/size/viewport_width"
+
 @export var board_scene: PackedScene
 @export var square_scene: PackedScene
 
@@ -29,20 +32,29 @@ func initialize() -> void:
 			board.add_child(_create_square(Vector2i(x, y)))
 
 	_fit_board()
+	get_viewport().size_changed.connect(_fit_board)
 
 
 func _create_square(cell: Vector2i) -> Square:
 	var square: Square = square_scene.instantiate()
 	square.position = Vector2(cell) * square_size
 	squares[cell] = square
-	square.initialize(cell, light_color if (cell.x + cell.y) % 2 == 0 else dark_color)
+	var light: bool = (cell.x + cell.y) % 2 == 0
+	square.initialize(cell, light_color if light else dark_color)
+	# Drawn in the other square's color, so they read on both without a new color.
+	var rank: String = str(board_size - cell.y) if cell.x == 0 else ""
+	var file: String = FILES[cell.x] if cell.y == board_size - 1 else ""
+	square.set_coordinates(rank, file, dark_color if light else light_color)
 	return square
 
 
+# Fitted to the base width, not the screen: the HUD is laid out for that width, so the board
+# keeps its size on wider screens and stays between the player bars.
 func _fit_board() -> void:
 	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+	var base_width: float = float(ProjectSettings.get_setting(BASE_WIDTH_SETTING))
 	var board_pixels: float = square_size.x * board_size
-	var fit_scale: float = minf(viewport_size.x, viewport_size.y) / board_pixels * (1.0 - margin)
+	var fit_scale: float = base_width / board_pixels * (1.0 - margin)
 	var scaled_pixels: float = board_pixels * fit_scale
 
 	board.scale = Vector2(fit_scale, fit_scale)

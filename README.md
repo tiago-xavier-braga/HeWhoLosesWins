@@ -28,7 +28,7 @@ live build is updated by hand, so it can be behind `main`.
 - **Puzzles** — 50 puzzles in 10 sections, each teaching one idea, from
   Tutorial to Masters. Each starts from a fixed position, and you must lose all
   your pieces against the CPU within a move limit. Solve one to unlock the
-  next. Progress is kept only until you close the game, for now.
+  next. Progress is saved, also in the browser.
 - **2 Players** — two players on one device. Locked until Phase 3.
 
 ## How to play

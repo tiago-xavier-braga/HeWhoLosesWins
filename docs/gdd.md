@@ -110,7 +110,8 @@ Each puzzle has one goal:
   opens scrolled to its section.
 - Puzzles must be solved in order: a puzzle can't be played until the previous
   one is solved, so none can be skipped.
-- Progress is saved, on web and Android. How it's saved is decided later.
+- Progress is saved, on web and Android, with Save Kit: in the browser's localStorage on the
+  web and in a `user://` file everywhere else.
 
 ### Level data
 

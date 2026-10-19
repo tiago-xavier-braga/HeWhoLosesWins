@@ -13,9 +13,9 @@ config_version=5
 config/name="He Who Loses Wins"
 run/main_scene="res://scenes/ui/start_menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 boot_splash/bg_color=Color(0.19215687, 0.19215687, 0.1764706, 1)
 boot_splash/image="res://assets/textures/ui/txt_boot_splash.png"
+config/icon="res://icon.svg"
 
 [audio]
 
@@ -27,6 +27,7 @@ LeafTween="*uid://qbx4dagkdwpi"
 GameSettings="*res://scripts/game/game_settings.gd"
 Sfx="*res://scripts/audio/sfx.gd"
 Music="*res://scenes/audio/music.tscn"
+SaveKit="*uid://cbq26gcqu6ro"
 
 [display]
 
@@ -37,7 +38,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/leaf_tween/plugin.cfg")
+enabled=PackedStringArray("res://addons/leaf_tween/plugin.cfg", "res://addons/save_kit/plugin.cfg")
 
 [gui]
 
@@ -52,3 +53,9 @@ theme/custom="res://resources/ui_theme.tres"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[save_kit]
+
+save_key="he_who_loses_wins"
+defaults_file="res://resources/save_defaults.json"
+custom_storage=""

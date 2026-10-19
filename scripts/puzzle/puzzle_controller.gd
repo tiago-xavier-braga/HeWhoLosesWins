@@ -55,8 +55,8 @@ func _on_piece_moved(piece: Piece, from_cell: Vector2i) -> void:
 
 func _finish_match(winner: PlayerData) -> void:
 	var level: PuzzleLevel = GameSettings.puzzle
-	if winner != cpu_player.player and level not in GameSettings.solved_puzzles:
-		GameSettings.solved_puzzles.append(level)
+	if winner != cpu_player.player:
+		GameSettings.mark_solved(level)
 	super(winner)
 
 

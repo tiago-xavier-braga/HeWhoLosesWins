@@ -30,8 +30,8 @@ func _ready() -> void:
 		(view.get_node(IDEA_PATH) as Label).text = section.idea
 		for level: PuzzleLevel in section.levels:
 			# Puzzles unlock in order, so the one unlocked but not solved yet is the current one.
-			var unlocked: bool = _levels.is_empty() or _levels.back() in GameSettings.solved_puzzles
-			var solved: bool = level in GameSettings.solved_puzzles
+			var unlocked: bool = _levels.is_empty() or GameSettings.is_solved(_levels.back())
+			var solved: bool = GameSettings.is_solved(level)
 			if unlocked and not solved:
 				current_section = view
 			_levels.append(level)
